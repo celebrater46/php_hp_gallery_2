@@ -19,7 +19,7 @@ $images_array = [
         'Her name is "Sarma". She is the angel of punishment in my novel "The 3rd Prison".'
     ],
     [
-        "210804-hizuruSeifukuRedC.png",
+        "210804-hizuruSeifukuRedC.jpg",
         "ヒヅル様がセーラー服姿を披露されたようです",
         "That suits Hizuru-sama",
         "年甲斐もなk……おっと、誰か来たようだ。",
@@ -37,16 +37,16 @@ function h($s) {
 <head>
     <meta charset="utf-8">
     <meta name="Author" content="Enin Fujimi - 富士見永人">
-    <title>My Micro Blog</title>
+    <title>Dark Labyrinth Gallery</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>
         <a href="/?t=<?php echo h($test_url); ?>">
-            PHP MY GALLERY
+            Dark Labyrinth Gallery
         </a>
     </h1>
-    <div>
+    <div class="container">
         <?php foreach ($images_array as $item) : ?>
             <div class="thumb_box">
                 <img src="<?php echo "img/".$item[0]; ?>">
