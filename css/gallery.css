@@ -28,6 +28,10 @@ a:active {
     background-repeat : repeat;
 }
 
+h1.gallery{
+    margin: 30px auto;
+}
+
 div.container{
     width: 1200px;
     margin: 0 auto;
@@ -46,4 +50,45 @@ div.thumb_box img {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+}
+
+img.art{
+    border: 1px solid gray;
+    margin: 20px auto 0;
+}
+
+img.art.x{
+    width: 1200px;
+    height: auto;
+}
+
+img.art.y{
+    height: 900px;
+    width: auto;
+}
+
+div.txt{
+    border: 4px double gray;
+    text-align: center;
+    width: 640px;
+    height: auto;
+    margin: 30px auto;
+    padding: 30px;
+}
+
+div.txt h1{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+div.txt h2{
+    font-size: 18px;
+}
+
+div.back {
+    margin: 0 auto 20px;
+}
+
+div.back a{
+    font-size: 18px;
 }
