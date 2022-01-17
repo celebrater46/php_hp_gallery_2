@@ -38,8 +38,8 @@ $class = xy($scale);
         </a>
 
         <div class="txt">
-            <h1>ストーカーは犯罪です</h1>
-            <h2>やめましょう<?php echo $id; ?></h2>
+            <h1><?php echo $images_array[$id]["title"]; ?></h1>
+            <h2><?php echo $images_array[$id]["cap"]; ?></h2>
         </div>
 
         <div class="back">
