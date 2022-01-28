@@ -171,18 +171,17 @@ function h($s) {
         <?php elseif($list === null): ?>
             <p>ERROR: list.txt が見つかりません。Not found "list.txt"</p>
         <?php else: ?>
-            <?php if($file_names === null): ?>
-
+            <?php if($pictures === null): ?>
+                <p>ERROR: 画像読み込みエラー。Loading Error occurred.</p>
             <?php else: ?>
-
+                <?php foreach ($pictures as $picture): ?>
+                <?php endforeach ?>
+                    <div class="thumb box">
+                        <a href="view.php?pic=<?php echo h($picture->id); ?>">
+                            <img src="<?php echo $picture->thumb; ?>">
+                        </a>
+                    </div>
             <?php endif ?>
-            <?php for ($i = 0; $i < $count; $i++) : ?>
-                <div class="thumb_box">
-                    <a href="view.php?id=<?php echo h($i); ?>">
-                        <img src="<?php echo "img/".$images_array[$i]["src"]; ?>">
-                    </a>
-                </div>
-            <?php endfor; ?>
         <?php endif ?>
     </div>
 

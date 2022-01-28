@@ -54,19 +54,20 @@ class Picture
     }
 
     function check_img($file){
-        if(strpos($file, ".png") === false && strpos($file, ".jpg") === false && strpos($file, ".gif") === false){
-            if(file_exists($this->dir . $file . ".png")){
-                return $file . ".png";
-            } elseif(file_exists($this->dir . $file . ".jpg")) {
-                return $file . ".jpg";
-            } elseif(file_exists($this->dir . $file . ".gif")) {
-                return $file . ".gif";
+        $img = $this->dir . $file;
+        if(strpos($img, ".png") === false && strpos($img, ".jpg") === false && strpos($img, ".gif") === false){
+            if(file_exists($img . ".png")){
+                return $img . ".png";
+            } elseif(file_exists($img . ".jpg")) {
+                return $img . ".jpg";
+            } elseif(file_exists($img . ".gif")) {
+                return $img . ".gif";
             } else {
                 return "../404.png";
             }
         } else {
-            if(file_exists($this->dir . $file)){
-                return $file;
+            if(file_exists($img)){
+                return $img;
             } else {
                 return "../404.png";
             }
