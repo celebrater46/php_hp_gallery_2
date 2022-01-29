@@ -1,9 +1,10 @@
 <?php
 
-$test_url = 1;
-$max_thumb = 16;
+//$test_url = 1;
+//$max_thumb = 16;
 
-require_once("info.php");
+require_once "info.php";
+require_once "Picture.php";
 
 //$count = count($images_array);
 //$thumb_size = 400;
@@ -11,7 +12,7 @@ $lang = 0;
 $setting = get_setting();
 $list = get_list($setting);
 $pictures = get_pictures($list, $lang);
-check_thumb($list, $pictures); // サムネが存在するかチェックし、なければ生成する
+//check_thumb($list, $pictures); // サムネが存在するかチェックし、なければ生成する
 
 //function check_thumb($list, $pictures){
 //    if($list === null){
@@ -161,10 +162,9 @@ function h($s) {
 </head>
 <body>
     <h1 class="gallery">
-        <a href="/?t=<?php echo h($test_url); ?>">
-            PHP HP GALLERY
-        </a>
+        PHP HP GALLERY
     </h1>
+    <?php var_dump($pictures); ?>
     <div class="container">
         <?php if($setting === null): ?>
             <p>ERROR: setting.txt が見つかりません。Not found "setting.txt"</p>
@@ -175,12 +175,16 @@ function h($s) {
                 <p>ERROR: 画像読み込みエラー。Loading Error occurred.</p>
             <?php else: ?>
                 <?php foreach ($pictures as $picture): ?>
-                <?php endforeach ?>
                     <div class="thumb box">
-                        <a href="view.php?pic=<?php echo h($picture->id); ?>">
-                            <img src="<?php echo $picture->thumb; ?>">
-                        </a>
+                        <?php if($picture->thumb === null): ?>
+                            <img src="404.png">
+                        <?php else: ?>
+                            <a href="view.php?pic=<?php echo h($picture->id); ?>">
+                                <img src="<?php echo $picture->thumb; ?>">
+                            </a>
+                        <?php endif; ?>
                     </div>
+                <?php endforeach ?>
             <?php endif ?>
         <?php endif ?>
     </div>

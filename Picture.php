@@ -63,20 +63,22 @@ class Picture
             } elseif(file_exists($img . ".gif")) {
                 return $img . ".gif";
             } else {
-                return "../404.png";
+//                return "../404.png";
+                return null;
             }
         } else {
             if(file_exists($img)){
                 return $img;
             } else {
-                return "../404.png";
+//                return "../404.png";
+                return null;
             }
         }
     }
 
     function check_thumb(){
-        if($this->file_name === "../404.png"){
-            $this->thumb = "../404.png";
+        if($this->file_name === null){
+            $this->thumb = null;
         } else {
             if(file_exists("thumb/" . $this->file_name) === false){
                 $this->create_thumb($this->file_name);
