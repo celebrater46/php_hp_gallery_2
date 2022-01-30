@@ -1,12 +1,14 @@
 <?php
 
-require_once "module.php";
+require_once "main.php";
 require_once "Picture.php";
 
 $lang = 0;
+$pic = isset($_GET["pic"]) ? (int)$_GET["pic"] : null;
 $setting = get_setting();
 $list = get_list($setting);
 $pictures = get_pictures($list, $lang);
+//$pic_info =
 
 ?>
 <!DOCTYPE html>
@@ -28,7 +30,7 @@ $pictures = get_pictures($list, $lang);
             <p>ERROR: setting.txt が見つかりません。Not found "setting.txt"</p>
         <?php elseif($list === null): ?>
             <p>ERROR: list.txt が見つかりません。Not found "list.txt"</p>
-        <?php else: ?>
+        <?php elseif($pic === null): ?>
             <?php if($pictures === null): ?>
                 <p>ERROR: 画像読み込みエラー。Loading Error occurred.</p>
             <?php else: ?>
@@ -44,6 +46,16 @@ $pictures = get_pictures($list, $lang);
                     </div>
                 <?php endforeach ?>
             <?php endif ?>
+        <?php else: ?>
+            <div>
+                <a href="<?php echo IMAGES_DIR . "/"; ?>">
+                    <img src="<?php echo IMAGES_DIR . "/" . $pictures[$pic]->file_name; ?>">
+                </a>
+            </div>
+            <div>
+                <h1><?php echo $pictures[$pic]->title; ?></h1>
+                <h2><?php echo $pictures[$pic]->comment; ?></h2>
+            </div>
         <?php endif ?>
     </div>
 

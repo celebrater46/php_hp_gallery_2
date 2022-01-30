@@ -68,6 +68,10 @@ function get_setting(){
     }
 }
 
+//function get_info($pic){
+//
+//}
+
 function h($s) {
     return htmlspecialchars($s, ENT_QUOTES, "UTF-8");
 }
