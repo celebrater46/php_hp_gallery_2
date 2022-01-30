@@ -57,18 +57,19 @@ class Picture
         $img = $this->dir . $file;
         if(strpos($img, ".png") === false && strpos($img, ".jpg") === false && strpos($img, ".gif") === false){
             if(file_exists($img . ".png")){
-                return $img . ".png";
+                return $file . ".png";
             } elseif(file_exists($img . ".jpg")) {
-                return $img . ".jpg";
+                return $file . ".jpg";
             } elseif(file_exists($img . ".gif")) {
-                return $img . ".gif";
+                return $file . ".gif";
             } else {
 //                return "../404.png";
                 return null;
             }
         } else {
             if(file_exists($img)){
-                return $img;
+                $temp = str_replace($this->dir, "", $img);
+                return $temp;
             } else {
 //                return "../404.png";
                 return null;
@@ -107,26 +108,58 @@ class Picture
     }
 
     function create_thumb($file){
-        $src = "img/" . $file;
-        $to = "thumb/" . $file;
+        $src = IMAGES_DIR . "/" . $file;
+        $to = THUMBNAIL_DIR . "/" . $file;
+        var_dump($src);
+//        var_dump($to);
         $size = getimagesize($src); // [0] => x, [1] => y
         $width = $size[0];
         $height = $size[1];
         $thumb = $this->calc_thumb_size($width, $height);
 
+        switch (substr($file, -3)) {
+            case "gif":
+                $src_image = imagecreatefromgif($src); // 画像リソースの作成
+                break;
+            case "jpg":
+            case "jpeg":
+                $src_image = imagecreatefromjpeg($src); // 画像リソースの作成
+                break;
+            case "png":
+                $src_image = imagecreatefrompng($src); // 画像リソースの作成
+                break;
+        }
+        $created_img = imagecreatetruecolor($thumb["x"], $thumb["y"]);
         // コピー先リソース、コピー元リソース、コピー先のX座標、同Y座標、コピー元のX座標、Y座興、コピー先の幅、高さ、コピー元の幅、高さ
-        imagecopyresampled($to, $src, 0, 0, 0, 0, $thumb["x"], $thumb["y"], $width, $height);
+        imagecopyresampled($created_img, $src_image, 0, 0, 0, 0, $thumb["x"], $thumb["y"], $width, $height);
+//        try{
+//
+//        } catch (Exception $e){
+//            $_SESSION["error"] = $e->getMessage();
+//        }
+        switch (substr($file, -3)) {
+            case "git":
+                imagegif($created_img, THUMBNAIL_DIR . "/" . $file);
+                break;
+            case "jpg":
+            case "jpeg":
+                imagejpeg($created_img, THUMBNAIL_DIR . "/" . $file);
+                break;
+            case "png":
+                imagepng($created_img, THUMBNAIL_DIR . "/" . $file);
+                break;
+        }
     }
 
     function calc_thumb_size($x, $y){
-        $thumb_size = 400;
+//        $thumb_size = 400;
         $array = ["x" => 0, "y" => 0];
         if($x > $y){
-            $array["y"] = $thumb_size;
-            $array["x"] = round($x / $y * $thumb_size);
+            $array["y"] = THUMBNAIL_SIZE;
+            $array["x"] = round($x / $y * THUMBNAIL_SIZE);
         } else {
-            $array["x"] = $thumb_size;
-            $array["y"] = round($y / $x * $thumb_size);
+            $array["x"] = THUMBNAIL_SIZE;
+            $array["y"] = round($y / $x * THUMBNAIL_SIZE);
         }
         return $array;
     }

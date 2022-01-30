@@ -3,8 +3,20 @@
 //$test_url = 1;
 //$max_thumb = 16;
 
+ini_set('display_errors', 1); // エラーメッセージを常時表示する
+define('MAX_FILE_SIZE', 1 * 1024 * 1024); // 1MB
+define('THUMBNAIL_SIZE', 400);
+define('IMAGES_DIR', __DIR__ . '/img'); // 画像ファイルのディレクトリ（__DIR__ は現在のディレクトリ取得）
+define('THUMBNAIL_DIR', __DIR__ . '/thumb'); // サムネイルディレクトリ
+
 require_once "info.php";
 require_once "Picture.php";
+
+// 画像処理に必要なプラグイン GD の有無
+if (!function_exists('imagecreatetruecolor')) {
+    echo "Not found GD.";
+    exit;
+}
 
 //$count = count($images_array);
 //$thumb_size = 400;
