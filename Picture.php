@@ -3,7 +3,7 @@
 class Picture
 {
     public $id;
-    public $dir;
+//    public $dir;
     public $file_name;
     public $thumb;
     public $title;
@@ -11,7 +11,7 @@ class Picture
 
     function __construct($id, $line, $lang){
         $temp_array = explode("|", $line);
-        $this->dir = "img/";
+//        $this->dir = "img/";
         $this->id = $id;
         $this->file_name = $this->check_img($temp_array[0]);
         $this->thumb = $this->check_thumb();
@@ -51,7 +51,7 @@ class Picture
     }
 
     function check_img($file){
-        $img = $this->dir . $file;
+        $img = IMAGES_DIR . "/" . $file;
         if(strpos($img, ".png") === false && strpos($img, ".jpg") === false && strpos($img, ".gif") === false){
             if(file_exists($img . ".png")){
                 return $file . ".png";
@@ -64,8 +64,8 @@ class Picture
             }
         } else {
             if(file_exists($img)){
-                $temp = str_replace($this->dir, "", $img);
-                return $temp;
+//                $temp = str_replace(IMAGES_DIR, "", $img);
+                return $file;
             } else {
                 return null;
             }
