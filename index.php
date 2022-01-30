@@ -1,8 +1,5 @@
 <?php
 
-//$test_url = 1;
-//$max_thumb = 16;
-
 ini_set('display_errors', 1); // エラーメッセージを常時表示する
 define('MAX_FILE_SIZE', 1 * 1024 * 1024); // 1MB
 define('THUMBNAIL_SIZE', 400);
@@ -18,81 +15,10 @@ if (!function_exists('imagecreatetruecolor')) {
     exit;
 }
 
-//$count = count($images_array);
-//$thumb_size = 400;
 $lang = 0;
 $setting = get_setting();
 $list = get_list($setting);
 $pictures = get_pictures($list, $lang);
-//check_thumb($list, $pictures); // サムネが存在するかチェックし、なければ生成する
-
-//function check_thumb($list, $pictures){
-//    if($list === null){
-//        return null;
-//    } elseif($pictures === null){
-//        return null;
-//    } else {
-//        foreach ($pictures as $picture){
-//            $img = check_img($picture->filename);
-//            if($img === null){
-//                // 元の画像がない場合、404 画像割当
-//                $picture->rename_file_404();
-//            } else {
-//                // サムネが存在しない場合、自動生成
-//                if(file_exists("thumb/" . $img) === false){
-//                    create_thumb($img);
-//                }
-//            }
-//        }
-//    }
-//}
-//
-//function create_thumb($file){
-//    $src = "img/" . $file;
-//    $to = "thumb/" . $file;
-//    $size = getimagesize($src); // [0] => x, [1] => y
-//    $width = $size[0];
-//    $height = $size[1];
-////    $img_type = $width > $height ? "x" : "y"; // 横長なら x 縦長なら y
-//    $thumb = calc_thumb_size($width, $height);
-//
-//    // コピー先リソース、コピー元リソース、コピー先のX座標、同Y座標、コピー元のX座標、Y座興、コピー先の幅、高さ、コピー元の幅、高さ
-//    imagecopyresampled($to, $src, 0, 0, 0, 0, $thumb["x"], $thumb["y"], $width, $height);
-//}
-// 1200 800
-//function calc_thumb_size($x, $y){
-//    $thumb_size = 400;
-//    $array = ["x" => 0, "y" => 0];
-//    if($x > $y){
-//        $array["y"] = $thumb_size;
-//        $array["x"] = round($x / $y * $thumb_size);
-//    } else {
-//        $array["x"] = $thumb_size;
-//        $array["y"] = round($y / $x * $thumb_size);
-//    }
-//    return $array;
-//}
-
-//function check_img($file){
-//    $dir = "img/";
-//    if(strpos($file, ".png") === false && strpos($file, ".jpg") === false && strpos($file, ".gif") === false){
-//        if(file_exists($dir . $file . ".png")){
-//            return $file . ".png";
-//        } elseif(file_exists($dir . $file . ".jpg")) {
-//            return $file . ".jpg";
-//        } elseif(file_exists($dir . $file . ".gif")) {
-//            return $file . ".gif";
-//        } else {
-//            return null;
-//        }
-//    } else {
-//        if(file_exists($dir . $file)){
-//            return $file;
-//        } else {
-//            return null;
-//        }
-//    }
-//}
 
 function get_pictures($list, $lang){
     if($list[0] === "no_list_mode"){
@@ -130,19 +56,10 @@ function get_list($setting){
         if($setting[1] === "false"){
             return ["no_list_mode"];
         } else {
-//            return ["ERROR:", 'list.txt が見つかりません。Not found "list.txt".'];
             return null;
         }
     }
 }
-
-//function get_img_file_names($list_line){
-//    if($list_line === "no_list_mode"){
-//        return glob("img/*");
-//    } else {
-//        return null;
-//    }
-//}
 
 function get_setting(){
     if(file_exists("setting.txt")){
@@ -176,7 +93,6 @@ function h($s) {
     <h1 class="gallery">
         PHP HP GALLERY
     </h1>
-    <?php var_dump($pictures); ?>
     <div class="container">
         <?php if($setting === null): ?>
             <p>ERROR: setting.txt が見つかりません。Not found "setting.txt"</p>
