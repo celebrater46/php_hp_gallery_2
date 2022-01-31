@@ -40,7 +40,7 @@ $pictures = get_pictures($list, $lang);
                             <img src="404.png">
                         <?php else: ?>
                             <a href="index.php?pic=<?php echo h($picture->id); ?>">
-                                <img src="<?php echo $picture->thumb; ?>">
+                                <img src="<?php echo THUMBNAIL_DIR_HTTP . "/" . $picture->thumb; ?>">
                             </a>
                         <?php endif; ?>
                     </div>
@@ -48,8 +48,8 @@ $pictures = get_pictures($list, $lang);
             <?php endif ?>
         <?php else: ?>
             <div>
-                <a href="<?php echo IMAGES_DIR . "/"; ?>">
-                    <img src="<?php echo IMAGES_DIR . "/" . $pictures[$pic]->file_name; ?>">
+                <a href="<?php echo IMAGES_DIR_HTTP . "/"; ?>">
+                    <img class="gallery pic" src="<?php echo IMAGES_DIR_HTTP . "/" . $pictures[$pic]->file_name; ?>">
                 </a>
             </div>
             <div>

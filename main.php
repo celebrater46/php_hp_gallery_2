@@ -7,6 +7,8 @@ define('MAX_FILE_SIZE', 1 * 1024 * 1024); // 1MB
 define('THUMBNAIL_SIZE', 400);
 define('IMAGES_DIR', __DIR__ . '/img'); // 画像ファイルのディレクトリ（__DIR__ は現在のディレクトリ取得）
 define('THUMBNAIL_DIR', __DIR__ . '/thumb'); // サムネイルディレクトリ
+define('IMAGES_DIR_HTTP', 'img'); // HTTPでアクセスした際にディレクトリが変わるので用意
+define('THUMBNAIL_DIR_HTTP', 'thumb');
 
 // 画像処理に必要なプラグイン GD の有無
 if (!function_exists('imagecreatetruecolor')) {

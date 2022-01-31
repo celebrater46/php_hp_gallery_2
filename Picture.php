@@ -79,7 +79,7 @@ class Picture
             if(file_exists("thumb/" . $this->file_name) === false){
                 $this->create_thumb($this->file_name);
             }
-            return "thumb/" . $this->file_name;
+            return $this->file_name;
         }
     }
 

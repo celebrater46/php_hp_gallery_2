@@ -67,6 +67,10 @@ img.art.y{
     width: auto;
 }
 
+img.gallery.pic{
+    width: 600px;
+}
+
 div.txt{
     border: 4px double gray;
     text-align: center;
