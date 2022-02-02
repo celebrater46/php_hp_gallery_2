@@ -2,8 +2,7 @@
 
 require_once "Picture.php";
 
-ini_set('display_errors', 1); // エラーメッセージを常時表示する
-//define('MAX_FILE_SIZE', 1 * 1024 * 1024); // 1MB
+//ini_set('display_errors', 1); // エラーメッセージを常時表示する
 define('THUMBNAIL_SIZE', 400); // 自動生成されるサムネのサイズ（実際に表示されるのは CSS の div.thumb.box のサイズ）
 define('IMAGES_DIR', __DIR__ . '/img'); // 画像ファイルのディレクトリ（__DIR__ は現在のディレクトリ取得）
 define('THUMBNAIL_DIR', __DIR__ . '/thumb'); // サムネイルディレクトリ
@@ -70,10 +69,6 @@ function get_setting(){
         return null;
     }
 }
-
-//function get_info($pic){
-//
-//}
 
 function h($s) {
     return htmlspecialchars($s, ENT_QUOTES, "UTF-8");

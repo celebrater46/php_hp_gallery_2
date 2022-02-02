@@ -3,7 +3,6 @@
 class Picture
 {
     public $id;
-//    public $dir;
     public $file_name;
     public $thumb;
     public $title;
@@ -12,7 +11,6 @@ class Picture
 
     function __construct($id, $line, $lang){
         $temp_array = explode("|", $line);
-//        $this->dir = "img/";
         $this->id = $id;
         $this->file_name = $this->check_img($temp_array[0]);
         $this->thumb = $this->check_thumb();
@@ -130,7 +128,6 @@ class Picture
                 imagepng($created_img, THUMBNAIL_DIR . "/" . $file);
                 break;
         }
-//        throw new Exception("サムネあるのにサムネ作ったったーｗ");
     }
 
     function calc_thumb_size($x, $y){

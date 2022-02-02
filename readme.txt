@@ -54,8 +54,31 @@ PHP の GD という画像処理ライブラリを使って、サムネイルを
 
 
 
+############################################################################################
+############################################################################################
+About PHP HP GALLERY (PHG)
+
 ##############################################
-更新履歴
+Terms of service
+##############################################
+
+This PHG is the App that I "Enin Fujimi" developed for exhibition my pictures.
+
+PNS is MIT license.
+If specify a copyright, you can edit PHG and give it out on the Web.
+I never take responsibility even if PHG leads any troubles.
+
+I regard you accept this agreement as you start to use PHG.
+
+If you find any bug, tell me it. I will fix the bugs, but I don't know when it resolves.
+
+PHG is very simple and being developed quickly.
+If you change any folder name or mistake the syntax of each TXT files, PHG will be not working. Be careful.
+
+
+
+##############################################
+更新履歴 - Update history
 ##############################################
 
 2022/1/25 v1.01:

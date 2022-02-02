@@ -8,7 +8,6 @@ $pic = isset($_GET["pic"]) ? (int)$_GET["pic"] : null;
 $setting = get_setting();
 $list = get_list($setting);
 $pictures = get_pictures($list, $lang);
-//$pic_info =
 
 ?>
 <!DOCTYPE html>
