@@ -34,7 +34,8 @@ h1.gallery{
 
 div.container{
     width: 1200px;
-    margin: 0 auto;
+    margin: 20px auto 0;
+    text-align: center;
 }
 
 div.container > div.thumbs{
@@ -113,4 +114,34 @@ div.lang {
 
 div.lang a{
     font-size: 1rem;
+}
+
+@media screen and (max-width: 1000px){
+    div.container{
+        width: 100%;
+        padding: 50px 0 0;
+    }
+
+    div.thumb.box {
+        width: 44vw;
+        height: 44vw;
+        padding: 3vw;
+    }
+
+    div.texts{
+        width: 100%;
+    }
+
+    img.gallery.pic{
+        width: 100%;
+    }
+
+    img.gallery.pic.x{
+        width: 100%;
+    }
+
+    div.texts{
+        width: 80%;
+        padding: 5%;
+    }
 }

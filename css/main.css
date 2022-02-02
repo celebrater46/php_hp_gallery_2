@@ -1,152 +1,157 @@
 @charset "UTF-8";
 
-html {
-    margin-bottom: 1px;
-    height: 100%;
+html{
+    font-size: 20px;
 }
 
-body {
-    color: silver;
-    margin: 0px;
-    padding: 0px;
-    background-color: black;
-    font-size: 16px;
+body{
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-attachment : fixed;
+    background-size: 100% auto;
     text-align: center;
-    line-height: 150%;
-    font-family: Hiragino Kaku Gothic ProN W3, Helvetica, Meiryo, Tahoma;
-    font-weight: 400;
-}
-
-h1 {
-    margin: 0px;
-    padding: 0px;
-    font-size: 36px;
-    font-weight: 400;
-    bottom: auto;
-    font-family: Hiragino Kaku Gothic ProN W3, Helvetica, Meiryo, Tahoma;
-}
-
-h2 {
-    clear: both;
-    font-size: 48px;
-    font-weight: 400;
-    font-family: Hiragino Kaku Gothic ProN W3, Helvetica, Meiryo, Tahoma;
-}
-
-h3 {
-    margin: 0px;
-    padding: 0px;
-    font-family: Hiragino Kaku Gothic ProN W3, Helvetica, Meiryo, Tahoma;
-    font-weight: 400;
-}
-
-H4 {
-    margin: 0px;
-    padding: 0px;
-    font-family: Hiragino Kaku Gothic ProN W3, Helvetica, Meiryo, Tahoma;
-}
-
-
-h5 {
-    margin: 0px;
-    padding: 0px;
-}
-
-div {
-    margin: 0px;
-    padding: 0px;
-    font-size: 16px;
-    line-height: 150%;
-    font-family: Hiragino Kaku Gothic ProN W3, Helvetica, Meiryo, Tahoma;
-}
-
-SPAN {
-    font-size: 16px;
-}
-
-a {
-    text-decoration: none;
-}
-
-A:link {
-    color: #c28cff;
-}
-
-A:visited {
-    color: #c28cff;
-}
-
-A:hover {
-    border-bottom: 0px solid red;
-    text-decoration: underline;
-}
-
-A:active {
-    background-repeat : repeat;
-}
-
-TABLE {
-    margin: 0 auto;
-}
-
-TD {
-    margin: 0px;
-    padding: 0px;
-    font-size: 13px;
-    line-height: 150%;
-    font-family: Hiragino Kaku Gothic ProN W3, Helvetica, Meiryo, Tahoma;
-}
-
-img {
-    margin: 0px;
+    margin: 0;
     padding: 0;
 }
 
-P {
-    font-size: 16px;
-    font-family: Hiragino Kaku Gothic ProN W3, Helvetica, Meiryo, Tahoma;
-    font-weight: 400;
-    line-height: 150%;
+header{
+    display: flex;
+    margin: 0;
+    padding: 4px 20px 0;
 }
 
-img  a:hover {
+header img{
+    border: 0;
+}
+
+h2{
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 5px auto;
+}
+
+a{
     text-decoration: none;
-    border-bottom-width: 0px;
-    border-bottom-style: none;
 }
 
-div#bg {
-    width: 1000px;
+hr{
+    opacity: 0.5;
+    margin: 20px auto;
+}
+
+img{
+    border: 1px solid gray;
+}
+
+footer{
+    /*font-size: 1rem;*/
+    width: 100%;
+    margin: 0;
+    padding: 15px 0 15px;
+    /*background-color: #333333;*/
+    border-top: 4px double gray;
+    /*position: absolute;*/
+    bottom: 0;
+    text-align: center;
+}
+
+footer div{
+    font-size: 1rem;
+}
+
+div.container{
+    /*Height === Window.height - header - footer*/
+    width: 800px;
+    /*background-color: #111111;*/
+    margin: 0 auto;
+    text-align: left;
+}
+
+div.logo{
+    width: 180px;
+    text-align: left;
+}
+
+div.logo img{
+    height: 50px;
+}
+
+div.lang_links{
+    padding: 0 0 10px;
+}
+
+div.c{
+    display: flex;
     text-align: center;
     margin: 0 auto;
-    background-color: black;
 }
 
-div.border {
-    font-size: 48px;
-    margin: 40px auto;
+div.c > :nth-child(1){
+    padding: 0 5px 5px;
+    margin: 0 0 0 auto;
 }
 
-div.foot_txt {
-    text-align: center;
-    margin: 0 auto;
-    line-height: 150%;
-    padding: 5px 0 20px 0;
+div.c > :nth-child(2){
+    padding: 0 5px 5px;
+    margin: 0 auto 0 0;
 }
 
-div.foot_txt p {
-    font-size : 24px;
-    margin: 0 auto;
+div.blank{
+    width: 100%;
+    height: 25vh;
 }
 
 @media screen and (max-width: 1000px){
-    div.foot_txt {
-        text-align: left;
-        margin: 50px auto 20px 50px;
-        padding: 5px 0 15px;
+    html{
+        font-size: 40px;
     }
 
-    div.foot_txt p {
-        font-size : 5vw;
+    body{
+        background-size: auto 100%;
+        background-position: right bottom;
+    }
+
+    header {
+        position: fixed;
+        width: 100%;
+        height: 150px;
+        text-align: right;
+        padding: 0;
+        margin: 0;
+    }
+
+    footer{
+        position: relative;
+    }
+
+    div.container{
+        padding: 150px 0 0;
+        width: 90%;
+    }
+
+    div.logo{
+        position: absolute;
+        width: 85vw;
+        margin: 0 auto;
+        text-align: left;
+        top: 0px;
+        left: 20px;
+    }
+
+    div.logo img{
+        width: 60vw;
+        height: auto;
+        position: absolute;
+        top: 10px;
+
+    }
+
+    div.c{
+        display: block;
+    }
+
+    div.c > div{
+        padding: 0 5px;
+        margin: 0;
     }
 }
