@@ -62,8 +62,9 @@ function get_setting(){
         $setting = file("setting.txt");
         $array = [];
         foreach ($setting as $line){
-            array_push($array, str_replace(["multi_language:", "title_and_comment:", " ", "\r", "\n", "\r\n"], "", $line));
+            array_push($array, str_replace(["multi_language:", "title_and_comment:", "title:", "\r", "\n", "\r\n"], "", $line));
         }
+        $array[2] = explode("|", $array[2]); // 日本語タイトル, english_title
         return $array;
     } else {
         return null;

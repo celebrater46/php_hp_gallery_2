@@ -40,6 +40,7 @@ div.container{
 div.container > div.thumbs{
     display: flex;
     flex-wrap: wrap;
+    padding: 0 0 50px;
 }
 
 div.thumb.box {
@@ -102,5 +103,14 @@ div.back {
 }
 
 div.back a{
+    font-size: 1rem;
+}
+
+div.lang {
+    margin: 0 auto;
+    padding: 0 0 50px;
+}
+
+div.lang a{
     font-size: 1rem;
 }

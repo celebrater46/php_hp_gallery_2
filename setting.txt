@@ -1,2 +1,3 @@
-multi_language:false
-title_and_comment:false
+multi_language:true
+title_and_comment:true
+title:マイギャラリー|My Gallery
