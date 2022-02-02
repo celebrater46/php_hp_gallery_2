@@ -22,39 +22,46 @@ $pictures = get_pictures($list, $lang);
     <link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>
-    <h1 class="gallery">
-        PHP HP GALLERY
-    </h1>
     <div class="container">
         <?php if($setting === null): ?>
             <p>ERROR: setting.txt が見つかりません。Not found "setting.txt"</p>
         <?php elseif($list === null): ?>
             <p>ERROR: list.txt が見つかりません。Not found "list.txt"</p>
         <?php elseif($pic === null): ?>
+            <h1 class="gallery">
+                PHP HP GALLERY
+            </h1>
             <?php if($pictures === null): ?>
                 <p>ERROR: 画像読み込みエラー。Loading Error occurred.</p>
             <?php else: ?>
-                <?php foreach ($pictures as $picture): ?>
-                    <div class="thumb box">
-                        <?php if($picture->thumb === null): ?>
-                            <img src="404.png">
-                        <?php else: ?>
-                            <a href="index.php?pic=<?php echo h($picture->id); ?>">
-                                <img src="<?php echo THUMBNAIL_DIR_HTTP . "/" . $picture->thumb; ?>">
-                            </a>
-                        <?php endif; ?>
-                    </div>
-                <?php endforeach ?>
+                <div class="thumbs">
+                    <?php foreach ($pictures as $picture): ?>
+                        <div class="thumb box">
+                            <?php if($picture->thumb === null): ?>
+                                <img src="404.png">
+                            <?php else: ?>
+                                <a href="index.php?pic=<?php echo h($picture->id); ?>">
+                                    <img src="<?php echo THUMBNAIL_DIR_HTTP . "/" . $picture->thumb; ?>">
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                    <?php endforeach ?>
+                </div>
             <?php endif ?>
         <?php else: ?>
             <div>
-                <a href="<?php echo IMAGES_DIR_HTTP . "/"; ?>">
-                    <img class="gallery pic" src="<?php echo IMAGES_DIR_HTTP . "/" . $pictures[$pic]->file_name; ?>">
+                <a href="index.php">
+                    <img class="gallery pic<?php echo $pictures[$pic]->is_wide ? " x" : ""; ?>" src="<?php echo IMAGES_DIR_HTTP . "/" . $pictures[$pic]->file_name; ?>">
                 </a>
             </div>
-            <div>
-                <h1><?php echo $pictures[$pic]->title; ?></h1>
-                <h2><?php echo $pictures[$pic]->comment; ?></h2>
+            <?php if($pictures[$pic]->title !== ""): ?>
+                <div class="texts">
+                    <h1><?php echo $pictures[$pic]->title; ?></h1>
+                    <h2><?php echo $pictures[$pic]->comment; ?></h2>
+                </div>
+            <?php endif; ?>
+            <div class="back">
+                <a href="index.php">- 戻る -</A>
             </div>
         <?php endif ?>
     </div>

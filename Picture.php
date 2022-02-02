@@ -8,6 +8,7 @@ class Picture
     public $thumb;
     public $title;
     public $comment;
+    public $is_wide;
 
     function __construct($id, $line, $lang){
         $temp_array = explode("|", $line);
@@ -17,12 +18,13 @@ class Picture
         $this->thumb = $this->check_thumb();
         $this->title = $this->get_name($temp_array, $lang);
         $this->comment = $this->get_comment($temp_array, $lang);
+        $this->is_wide = $this->wide_or_not();
 //        throw new Exception("サムネあるのにサムネ作ったったーｗ");
     }
 
     function get_name($array, $lang){
         if(!(isset($array[1]))){
-            return "無題";
+            return "";
         }
         if($lang !== 1){
             return $array[1];
@@ -30,14 +32,14 @@ class Picture
             if(isset($array[3])){
                 return $array[3];
             } else{
-                return "UNKNOWN";
+                return "";
             }
         }
     }
 
     function get_comment($array, $lang){
         if(!(isset($array[2]))){
-            return "コメントは特にありません。";
+            return "";
         }
         if($lang !== 1){
             return $array[2];
@@ -45,7 +47,7 @@ class Picture
             if(isset($array[4])){
                 return $array[4];
             } else{
-                return "No comment.";
+                return "";
             }
         }
     }
@@ -69,6 +71,16 @@ class Picture
             } else {
                 return null;
             }
+        }
+    }
+
+    function wide_or_not(){
+        $src = IMAGES_DIR . "/" . $this->file_name;
+        $size = getimagesize($src); // [0] => x, [1] => y
+        if($size[0] > $size[1]){
+            return true;
+        } else {
+            return false;
         }
     }
 
