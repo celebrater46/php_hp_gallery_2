@@ -63,7 +63,7 @@ $pictures = get_pictures($list, $lang);
                 </div>
             <?php endif; ?>
             <div class="back">
-                <a href="index.php?lang=<?php echo h($lang); ?>">- 戻る -</A>
+                <a href="index.php?lang=<?php echo h($lang); ?>">- <?php echo $lang === 1 ? "BACK" : "戻る"; ?> -</A>
             </div>
         <?php endif ?>
 
