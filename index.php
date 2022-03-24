@@ -1,13 +1,17 @@
 <?php
 
+namespace php_hp_gallery;
+
+use php_hp_gallery\modules as modules;
+
 require_once "modules/main.php";
 require_once "classes/Picture.php";
 
 $lang = isset($_GET["lang"]) ? (int)$_GET["lang"] : 0;
 $pic = isset($_GET["pic"]) ? (int)$_GET["pic"] : null;
-$setting = get_setting();
-$list = get_list($setting);
-$pictures = get_pictures($list, $lang);
+$setting = modules\get_setting();
+$list = modules\get_list($setting);
+$pictures = modules\get_pictures($list, $lang);
 
 ?>
 <!DOCTYPE html>
@@ -42,8 +46,8 @@ $pictures = get_pictures($list, $lang);
                             <?php if($picture->thumb === null): ?>
                                 <img src="404.png">
                             <?php else: ?>
-                                <a href="index.php?lang=<?php echo h($lang); ?>&pic=<?php echo h($picture->id); ?>">
-                                    <img src="<?php echo THUMBNAIL_DIR_HTTP . "/" . h($picture->thumb); ?>">
+                                <a href="index.php?lang=<?php echo modules\h($lang); ?>&pic=<?php echo modules\h($picture->id); ?>">
+                                    <img src="<?php echo THUMBNAIL_DIR_HTTP . "/" . modules\h($picture->thumb); ?>">
                                 </a>
                             <?php endif; ?>
                         </div>
@@ -52,27 +56,27 @@ $pictures = get_pictures($list, $lang);
             <?php endif ?>
         <?php else: ?>
             <div>
-                <a href="index.php?lang=<?php echo h($lang); ?>">
-                    <img class="gallery pic<?php echo $pictures[$pic]->is_wide ? " x" : ""; ?>" src="<?php echo IMAGES_DIR_HTTP . "/" . h($pictures[$pic]->file_name); ?>">
+                <a href="index.php?lang=<?php echo modules\h($lang); ?>">
+                    <img class="gallery pic<?php echo $pictures[$pic]->is_wide ? " x" : ""; ?>" src="<?php echo IMAGES_DIR_HTTP . "/" . modules\h($pictures[$pic]->file_name); ?>">
                 </a>
             </div>
             <?php if($pictures[$pic]->title !== "" && $setting[1] === "true"): ?>
                 <div class="texts">
-                    <h1><?php echo h($pictures[$pic]->title); ?></h1>
-                    <h2><?php echo h($pictures[$pic]->comment); ?></h2>
+                    <h1><?php echo modules\h($pictures[$pic]->title); ?></h1>
+                    <h2><?php echo modules\h($pictures[$pic]->comment); ?></h2>
                 </div>
             <?php endif; ?>
             <div class="back">
-                <a href="index.php?lang=<?php echo h($lang); ?>">- <?php echo $lang === 1 ? "BACK" : "戻る"; ?> -</A>
+                <a href="index.php?lang=<?php echo modules\h($lang); ?>">- <?php echo $lang === 1 ? "BACK" : "戻る"; ?> -</A>
             </div>
         <?php endif ?>
 
         <?php if($setting[0] === "true"): ?>
             <div class="lang">
                 <?php if($lang === 1): ?>
-                    <a href="index.php?lang=0<?php echo $pic === null ? "" : "&pic=" . h($pic); ?>">日本語</a>
+                    <a href="index.php?lang=0<?php echo $pic === null ? "" : "&pic=" . modules\h($pic); ?>">日本語</a>
                 <?php else: ?>
-                    <a href="index.php?lang=1<?php echo $pic === null ? "" : "&pic=" . h($pic); ?>">ENGLISH</a>
+                    <a href="index.php?lang=1<?php echo $pic === null ? "" : "&pic=" . modules\h($pic); ?>">ENGLISH</a>
                 <?php endif; ?>
             </div>
         <?php endif; ?>
