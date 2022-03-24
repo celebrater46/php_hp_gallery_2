@@ -1,8 +1,12 @@
 <?php
 
+namespace php_hp_gallery\modules;
+use php_hp_gallery\classes\Picture;
+
 //require_once "Picture.php";
 require_once ( dirname(__FILE__) . '/../init.php');
 require_once( dirname(__FILE__) . '/../classes/Picture.php');
+require_once "html_common_module.php";
 
 // 画像処理に必要なプラグイン GD の有無
 if (!function_exists('imagecreatetruecolor')) {
@@ -35,36 +39,79 @@ function get_pictures($list, $lang){
     }
 }
 
-function get_list($setting){
-    // title_and_comment
-    if($setting === null){
-        return null;
-    }
-    if(file_exists("list.txt")){
-        return file("list.txt");
+function get_list($txt){
+    if(file_exists($txt)){
+        $array = file($txt);
+        $new_array = [];
+        foreach ($array as $line){
+            array_push($new_array, delete_br($line));
+        }
+        return $array;
     } else {
-        if($setting[1] === "false"){
-            return ["no_list_mode"];
+        if($txt === "images.txt" && PHG_TITLE_AND_COMMENT === false){
+            echo "No list mode" . "<br>";
+            return null;
         } else {
+            echo "NOT FOUND: " . $txt . "<br>";
             return null;
         }
     }
 }
 
-function get_setting(){
-    if(file_exists("setting.txt")){
-        $setting = file("setting.txt");
-        $array = [];
-        foreach ($setting as $line){
-            array_push($array, str_replace(["multi_language:", "title_and_comment:", "title:", "\r", "\n", "\r\n"], "", $line));
-        }
-        $array[2] = explode("|", $array[2]); // 日本語タイトル, english_title
-        return $array;
-    } else {
-        return null;
-    }
-}
+//function get_images_txt(){
+//    // title_and_comment
+////    if($setting === null){
+////        return null;
+////    }
+//    if(file_exists("images.txt")){
+//        $array = file("images.txt");
+//        $new_array = [];
+//        foreach ($array as $line){
+//            array_push($new_array, delete_br($line));
+//        }
+//        return $array;
+////        return file("images.txt");
+//    } else {
+//        if(PHG_TITLE_AND_COMMENT === false){
+//            echo "No list mode" . "<br>";
+//            return null;
+//        } else {
+//            echo "NOT FOUND: images.txt" . "<br>";
+//            return null;
+//        }
+//    }
+//}
+//
+//function get_categories_txt(){
+//    if(file_exists("categories.txt")){
+//        $array = file("categories.txt");
+//        $new_array = [];
+//        foreach ($array as $line){
+//            array_push($new_array, delete_br($line));
+//        }
+//        return $array;
+////        return file("images.txt");
+//    } else {
+//        if(PHG_TITLE_AND_COMMENT === false){
+//            echo "No list mode" . "<br>";
+//            return null;
+//        } else {
+//            echo "NOT FOUND: images.txt" . "<br>";
+//            return null;
+//        }
+//    }
+//}
 
-function h($s) {
-    return htmlspecialchars($s, ENT_QUOTES, "UTF-8");
-}
+//function get_setting(){
+//    if(file_exists("setting.txt")){
+//        $setting = file("setting.txt");
+//        $array = [];
+//        foreach ($setting as $line){
+//            array_push($array, str_replace(["multi_language:", "title_and_comment:", "title:", "\r", "\n", "\r\n"], "", $line));
+//        }
+//        $array[2] = explode("|", $array[2]); // 日本語タイトル, english_title
+//        return $array;
+//    } else {
+//        return null;
+//    }
+//}

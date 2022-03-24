@@ -1,5 +1,7 @@
 <?php
 
+namespace php_hp_gallery\classes;
+
 class Picture
 {
     public $id;
@@ -9,33 +11,18 @@ class Picture
     public $comment;
     public $is_wide;
 
-    function __construct($id, $line, $lang){
-        $temp_array = explode("|", $line);
+    function __construct($id, $array, $lang){
+//        $temp_array = explode("|", $line);
         $this->id = $id;
-        $this->file_name = $this->check_img($temp_array[0]);
+        $this->file_name = $this->check_img($array[1]);
         $this->thumb = $this->check_thumb();
-        $this->title = $this->get_name($temp_array, $lang);
-        $this->comment = $this->get_comment($temp_array, $lang);
+        $this->title = $this->get_name($array, $lang);
+        $this->comment = $this->get_comment($array, $lang);
         $this->is_wide = $this->wide_or_not();
 //        throw new Exception("サムネあるのにサムネ作ったったーｗ");
     }
 
     function get_name($array, $lang){
-        if(!(isset($array[1]))){
-            return "";
-        }
-        if($lang !== 1){
-            return $array[1];
-        } else {
-            if(isset($array[3])){
-                return $array[3];
-            } else{
-                return "";
-            }
-        }
-    }
-
-    function get_comment($array, $lang){
         if(!(isset($array[2]))){
             return "";
         }
@@ -50,8 +37,23 @@ class Picture
         }
     }
 
+    function get_comment($array, $lang){
+        if(!(isset($array[3]))){
+            return "";
+        }
+        if($lang !== 1){
+            return $array[3];
+        } else {
+            if(isset($array[5])){
+                return $array[5];
+            } else{
+                return "";
+            }
+        }
+    }
+
     function check_img($file){
-        $img = IMAGES_DIR . "/" . $file;
+        $img = PHG_IMAGES_DIR . "/" . $file;
         if(strpos($img, ".png") === false && strpos($img, ".jpg") === false && strpos($img, ".gif") === false){
             if(file_exists($img . ".png")){
                 return $file . ".png";
@@ -64,7 +66,7 @@ class Picture
             }
         } else {
             if(file_exists($img)){
-//                $temp = str_replace(IMAGES_DIR, "", $img);
+//                $temp = str_replace(PHG_IMAGES_DIR, "", $img);
                 return $file;
             } else {
                 return null;
@@ -73,7 +75,7 @@ class Picture
     }
 
     function wide_or_not(){
-        $src = IMAGES_DIR . "/" . $this->file_name;
+        $src = PHG_IMAGES_DIR . "/" . $this->file_name;
         $size = getimagesize($src); // [0] => x, [1] => y
         if($size[0] > $size[1]){
             return true;
@@ -94,8 +96,8 @@ class Picture
     }
 
     function create_thumb($file){
-        $src = IMAGES_DIR . "/" . $file;
-        $to = THUMBNAIL_DIR . "/" . $file;
+        $src = PHG_IMAGES_DIR . "/" . $file;
+        $to = PHG_THUMBNAIL_DIR . "/" . $file;
         $size = getimagesize($src); // [0] => x, [1] => y
         $width = $size[0];
         $height = $size[1];
@@ -118,14 +120,14 @@ class Picture
         imagecopyresampled($created_img, $src_image, 0, 0, 0, 0, $thumb["x"], $thumb["y"], $width, $height);
         switch (substr($file, -3)) {
             case "git":
-                imagegif($created_img, THUMBNAIL_DIR . "/" . $file);
+                imagegif($created_img, PHG_THUMBNAIL_DIR . "/" . $file);
                 break;
             case "jpg":
             case "jpeg":
-                imagejpeg($created_img, THUMBNAIL_DIR . "/" . $file);
+                imagejpeg($created_img, PHG_THUMBNAIL_DIR . "/" . $file);
                 break;
             case "png":
-                imagepng($created_img, THUMBNAIL_DIR . "/" . $file);
+                imagepng($created_img, PHG_THUMBNAIL_DIR . "/" . $file);
                 break;
         }
     }
@@ -133,11 +135,11 @@ class Picture
     function calc_thumb_size($x, $y){
         $array = ["x" => 0, "y" => 0];
         if($x > $y){
-            $array["y"] = THUMBNAIL_SIZE;
-            $array["x"] = round($x / $y * THUMBNAIL_SIZE);
+            $array["y"] = PHG_THUMBNAIL_SIZE;
+            $array["x"] = round($x / $y * PHG_THUMBNAIL_SIZE);
         } else {
-            $array["x"] = THUMBNAIL_SIZE;
-            $array["y"] = round($y / $x * THUMBNAIL_SIZE);
+            $array["x"] = PHG_THUMBNAIL_SIZE;
+            $array["y"] = round($y / $x * PHG_THUMBNAIL_SIZE);
         }
         return $array;
     }
