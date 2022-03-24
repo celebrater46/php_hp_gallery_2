@@ -92,6 +92,7 @@ div.texts{
 div.texts h1{
     font-size: 1.2rem;
     font-weight: bold;
+    margin: 10px auto;
 }
 
 div.texts h2{

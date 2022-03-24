@@ -1,13 +1,8 @@
 <?php
 
-require_once "Picture.php";
-
-//ini_set('display_errors', 1); // エラーメッセージを常時表示する
-define('THUMBNAIL_SIZE', 400); // 自動生成されるサムネのサイズ（実際に表示されるのは CSS の div.thumb.box のサイズ）
-define('IMAGES_DIR', __DIR__ . '/img'); // 画像ファイルのディレクトリ（__DIR__ は現在のディレクトリ取得）
-define('THUMBNAIL_DIR', __DIR__ . '/thumb'); // サムネイルディレクトリ
-define('IMAGES_DIR_HTTP', 'img'); // HTTPでアクセスした際にディレクトリが変わるので用意
-define('THUMBNAIL_DIR_HTTP', 'thumb');
+//require_once "Picture.php";
+require_once ( dirname(__FILE__) . '/../init.php');
+require_once( dirname(__FILE__) . '/../classes/Picture.php');
 
 // 画像処理に必要なプラグイン GD の有無
 if (!function_exists('imagecreatetruecolor')) {

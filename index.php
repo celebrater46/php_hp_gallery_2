@@ -1,7 +1,7 @@
 <?php
 
-require_once "main.php";
-require_once "Picture.php";
+require_once "modules/main.php";
+require_once "classes/Picture.php";
 
 $lang = isset($_GET["lang"]) ? (int)$_GET["lang"] : 0;
 $pic = isset($_GET["pic"]) ? (int)$_GET["pic"] : null;
