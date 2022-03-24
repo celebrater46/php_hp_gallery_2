@@ -4,6 +4,7 @@ namespace php_hp_gallery;
 
 //ini_set('display_errors', 1); // エラーメッセージを常時表示する
 define('PHG_THUMBNAIL_SIZE', 400); // 自動生成されるサムネのサイズ（実際に表示されるのは CSS の div.thumb.box のサイズ）
+define('PHG_THUMBNAILS_PER_CATEGORY', 1); // 全カテゴリ表示モードの時に1カテゴリあたり何行までサムネイルを表示するか
 define('PHG_IMAGES_DIR', __DIR__ . '/img'); // 画像ファイルのディレクトリ（__DIR__ は現在のディレクトリ取得）
 define('PHG_THUMBNAIL_DIR', __DIR__ . '/thumb'); // サムネイルディレクトリ
 define('PHG_IMAGES_DIR_HTTP', 'img'); // HTTPでアクセスした際にディレクトリが変わるので用意

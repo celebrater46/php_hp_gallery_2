@@ -18,8 +18,8 @@ $state = new State();
 <html lang="<?php echo $state->lang === 1 ? 'en' : 'ja'; ?>">
 <head>
     <meta charset="utf-8">
-    <meta name="Author" content="<?php echo PHG_AUTHOR; ?>">
-    <title><?php echo PHG_SITE_NAME; ?></title>
+    <meta name="Author" content="<?php echo PHG_AUTHOR[$state->lang]; ?>">
+    <title><?php echo PHG_SITE_NAME[$state->lang]; ?></title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/gallery.css">
     <link rel="shortcut icon" href="favicon.ico">

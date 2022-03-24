@@ -6,15 +6,18 @@ use php_hp_gallery\classes\Category;
 
 require_once( dirname(__FILE__) . '/../classes/Category.php');
 
-function get_lang_links($state){
+function get_lang_links($state): string
+{
     $html = space_br("<div class='lang'>", 1);
     $html .= space_br("<a href='" . PHG_INDEX_FILE_NAME . "?lang=" . ($state->lang === 1 ? "0" : "1") . ($state->category === null ? "" : "&category=" . $state->category) . ($state->pic === null ? "" : "&pic=" . $state->pic) . "'>", 2);
     $html .= space_br($state->lang === 1 ? "日本語" : "ENGLISH", 3);
-    $html .= space_br("</div>", 2);
+    $html .= space_br("</a>", 2);
+    $html .= space_br("</div>", 1);
     return $html;
 }
 
-function get_picture_page($picture, $state){
+function get_picture_page($picture, $state): string
+{
     $img = PHG_IMAGES_DIR_HTTP . "/" . $picture->file_name;
     $html = space_br("<div>", 1);
     $html .= space_br("<a href='" . PHG_INDEX_FILE_NAME . "?lang=" . $state->lang . "'>", 2);
@@ -37,7 +40,8 @@ function get_picture_page($picture, $state){
     return $html;
 }
 
-function get_category_div($category, $state){
+function get_category_div($category, $state): string
+{
     $html = space_br("<h2>" . $category->name[$state->lang] . "</h2>", 1);
     $html .= space_br("<div class='thumbs'>", 1);
     foreach ($category->pictures as $pic){
@@ -56,7 +60,8 @@ function get_category_div($category, $state){
     return $html;
 }
 
-function get_categories($state){
+function get_categories($state): array
+{
     $categories_lines = get_list("categories.txt");
     $array = [];
     foreach ($categories_lines as $line){
@@ -65,10 +70,14 @@ function get_categories($state){
     return $array;
 }
 
-function create_html($state) {
+function create_html($state): string
+{
     $categories = get_categories($state);
+    $html = "";
     if($state->pic === null){
-        $html = space_br("<h1>" . PHG_SITE_NAME[$state->lang] . "</h1>", 1);
+        if(isset(PHG_SITE_NAME[$state->lang])){
+            $html .= space_br("<h1>" . PHG_SITE_NAME[$state->lang] . "</h1>", 1);
+        }
         if($state->category === null){
             foreach ($categories as $category){
                 $html .= get_category_div($category, $state);

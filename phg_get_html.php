@@ -6,6 +6,7 @@ use php_hp_gallery\modules as modules;
 
 require_once "modules/create_html.php";
 
-function phg_get_html($state) {
+function phg_get_html($state): string
+{
     return modules\create_html($state);
 }
