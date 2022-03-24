@@ -8,7 +8,7 @@ require_once( dirname(__FILE__) . '/../classes/Category.php');
 
 function get_lang_links($state){
     $html = space_br("<div class='lang'>", 1);
-    $html .= space_br("<a href='" . PHG_INDEX_FILE_NAME . "?lang=" . ($state->lang === 1 ? "0" : "1") . "&category=" . $state->category . "&pic=" . $state->pic . "'>", 2);
+    $html .= space_br("<a href='" . PHG_INDEX_FILE_NAME . "?lang=" . ($state->lang === 1 ? "0" : "1") . ($state->category === null ? "" : "&category=" . $state->category) . ($state->pic === null ? "" : "&pic=" . $state->pic) . "'>", 2);
     $html .= space_br($state->lang === 1 ? "日本語" : "ENGLISH", 3);
     $html .= space_br("</div>", 2);
     return $html;

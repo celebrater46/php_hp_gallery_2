@@ -1,2 +1,2 @@
 0|オリジナル|ORIGINAL|original
-1|ファンアート|FAN ART|fan_art
+1|ラフ|ROUGH|rough
