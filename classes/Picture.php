@@ -5,15 +5,17 @@ namespace php_hp_gallery\classes;
 class Picture
 {
     public $id;
+    public $category;
     public $file_name;
     public $thumb;
     public $title;
     public $comment;
     public $is_wide;
 
-    function __construct($id, $array, $lang){
+    function __construct($id, $category, $array, $lang){
 //        $temp_array = explode("|", $line);
         $this->id = $id;
+        $this->category = $category;
         $this->file_name = $this->check_img($array[1]);
         $this->thumb = $this->check_thumb();
         $this->title = $this->get_name($array, $lang);
@@ -62,6 +64,7 @@ class Picture
             } elseif(file_exists($img . ".gif")) {
                 return $file . ".gif";
             } else {
+                echo "NOT FOUND IMG: " . $file . "<br>";
                 return null;
             }
         } else {
@@ -69,6 +72,7 @@ class Picture
 //                $temp = str_replace(PHG_IMAGES_DIR, "", $img);
                 return $file;
             } else {
+                echo "NOT FOUND IMG: " . $img . "<br>";
                 return null;
             }
         }

@@ -18,17 +18,20 @@ class Category
     }
 
     function get_pictures($state){
-        $images = get_list("list.txt");
+        $images = get_list("images.txt");
         $pics = [];
         if($images !== null){
             $i = 0;
+//            var_dump($images);
             foreach ($images as $line){
                 $items = explode("|", $line);
-                $category = (int)items[0];
+//                var_dump($items);
+//                $category = (int)items[0]; // Fatal error: Uncaught Error: Undefined constant
+                $category = (int)$items[0];
                 if($category === $this->id){
-                    array_push($pics, new Picture($i, $items, $state->lang));
+                    array_push($pics, new Picture($i, $this->id, $items, $state->lang));
+                    $i++;
                 }
-                $i++;
             }
             return $pics;
         } else {
