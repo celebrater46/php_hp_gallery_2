@@ -66,9 +66,6 @@ function get_categories($state){
 }
 
 function create_html($state) {
-//    $images_lines = get_list("images.txt");
-//    $categories_lines = get_list("categories.txt");
-//    $state = new State();
     $categories = get_categories($state);
     if($state->pic === null){
         $html = space_br("<h1>" . PHG_SITE_NAME[$state->lang] . "</h1>", 1);
@@ -80,7 +77,6 @@ function create_html($state) {
             $html .= get_category_div($categories[$state->category], $state);
         }
     } else {
-//        var_dump($categories[$state->category]->pictures[$state->pic]);
         $html = get_picture_page($categories[$state->category]->pictures[$state->pic], $state);
     }
     $html .= get_lang_links($state);

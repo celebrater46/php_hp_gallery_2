@@ -12,11 +12,6 @@ require_once "classes/State.php";
 
 $state = new State();
 
-//$lang = isset($_GET["lang"]) ? (int)$_GET["lang"] : 0;
-//$pic = isset($_GET["pic"]) ? (int)$_GET["pic"] : null;
-//$setting = modules\get_setting();
-//$list = modules\get_list($setting);
-//$pictures = modules\get_pictures($list, $lang);
 
 ?>
 <!DOCTYPE html>

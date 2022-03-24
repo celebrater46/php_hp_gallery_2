@@ -14,7 +14,3 @@ define('PHG_TITLE_AND_COMMENT', true); // 画像のタイトルとコメント�
 define('PHG_SITE_NAME', ['マイギャラリー', 'My Gallery']); // タイトル（日本語, 英語）
 define('PHG_AUTHOR', ['富士見永人', 'Enin Fujimi']); // 管理者名（日本語, 英語）
 define('PHG_INDEX_FILE_NAME', "index.php"); // 外部サイトに組み込む場合、ここを変更
-
-//multi_language:true
-//title_and_comment:true
-//title:マイギャラリー|My Gallery

@@ -13,7 +13,6 @@ class Picture
     public $is_wide;
 
     function __construct($id, $category, $array, $lang){
-//        $temp_array = explode("|", $line);
         $this->id = $id;
         $this->category = $category;
         $this->file_name = $this->check_img($array[1]);
@@ -21,7 +20,6 @@ class Picture
         $this->title = $this->get_name($array, $lang);
         $this->comment = $this->get_comment($array, $lang);
         $this->is_wide = $this->wide_or_not();
-//        throw new Exception("サムネあるのにサムネ作ったったーｗ");
     }
 
     function get_name($array, $lang){
@@ -69,7 +67,6 @@ class Picture
             }
         } else {
             if(file_exists($img)){
-//                $temp = str_replace(PHG_IMAGES_DIR, "", $img);
                 return $file;
             } else {
                 echo "NOT FOUND IMG: " . $img . "<br>";
