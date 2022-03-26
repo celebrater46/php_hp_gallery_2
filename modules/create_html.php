@@ -3,6 +3,7 @@
 namespace php_hp_gallery\modules;
 
 use php_hp_gallery\classes\Category;
+use php_number_link_generator\classes\NumberLink;
 
 require_once( dirname(__FILE__) . '/../classes/Category.php');
 
@@ -40,7 +41,7 @@ function get_picture_page($picture, $state): string
     return $html;
 }
 
-function get_thumbs_div($pic, $state){
+function get_thumb_div($pic, $state){
     $thumb = PHG_THUMBNAIL_DIR_HTTP . "/" . $pic->thumb;
     if(file_exists($thumb)){
         $html = space_br("<div class='thumb box'>", 2);
@@ -54,31 +55,57 @@ function get_thumbs_div($pic, $state){
     }
 }
 
+function get_thumbs_html($link, $pics, $state){
+    $html = "";
+    for($i = $link->start; $i < $link->start + PNLG_MAX_TEXT_NUM; $i++){
+        if($i < $link->text_sum && $i < PHG_THUMBNAILS_PER_CATEGORY){
+            $html .= get_thumb_div($pics[$i], $state);
+//            $html .= space_br("<hr>", 1);
+//            $html .= space_br("<h2>" . $pics[$i]->title . "</h2>", 1);
+//            $html .= space_br("<div>", 1);
+//            $html .= get_p_lines_html($pics[$i]->lines);
+//            $html .= space_br("</div>", 1);
+        } else if($state->category === null){
+            break;
+        } else {
+            $html .= get_thumb_div($pics[$i], $state);
+        }
+    }
+    return $html;
+}
+
 function get_category_div($category, $state): string
 {
+    $pic_nums = count($category->pictures);
+    $link = new NumberLink($pic_nums);
     $html = space_br("<h2>" . $category->name[$state->lang] . "</h2>", 1);
     $html .= space_br("<div class='thumbs'>", 1);
-    $i = 0;
-    foreach ($category->pictures as $pic){
-        if($i < PHG_THUMBNAILS_PER_CATEGORY){
-            $html .= get_thumbs_div($pic, $state);
-        } else {
-            if($state->category === null){
-                break;
-            } else {
-                $html .= get_thumbs_div($pic, $state);
-            }
-        }
-        $i++;
-    }
+    $html .= get_thumbs_html($link, $category->pictures, $state);
+//    $i = 0;
+//    foreach ($category->pictures as $pic){
+//        if($i < PHG_THUMBNAILS_PER_CATEGORY){
+//            $html .= get_thumbs_div($pic, $state);
+//        } else {
+//            if($state->category === null){
+//                break;
+//            } else {
+//                $html .= get_thumbs_div($pic, $state);
+//            }
+//        }
+//        $i++;
+//    }
     $html .= space_br("</div>", 1);
-    if(PHG_THUMBNAILS_PER_CATEGORY < count($category->pictures)
+    if(PHG_THUMBNAILS_PER_CATEGORY < $pic_nums
     && $state->category === null)
     {
         $html .= space_br("<div class='seemore'>", 1);
         $html .= space_br('<p><a href="' . PHG_INDEX_FILE_NAME . '?lang=' . $state->lang . '&category=' . $category->id . '">' . ($state->lang === 1 ? 'See More...' : 'もっと見る') . '</a></p>', 2);
         $html .= space_br("</div>", 1);
-
+    }
+    if(PHG_THUMBNAILS_PER_PAGE < $pic_nums
+    && $state->category !== null)
+    {
+        $html .= $link->get_page_links_html();
     }
     return $html;
 }
