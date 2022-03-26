@@ -9,6 +9,16 @@ require_once( dirname(__FILE__) . '/../classes/Category.php');
 require_once( dirname(__FILE__) . '/../php_number_link_generator_2/init.php');
 require_once( dirname(__FILE__) . '/../php_number_link_generator_2/classes/NumberLink.php');
 
+function get_link_to_top($state): string
+{
+    $html = space_br("<div class='totop'>", 1);
+    $html .= space_br("<a href='" . PHG_INDEX_FILE_NAME . "?lang=" . ($state->lang === 1 ? "0" : "1") . "'>", 2);
+    $html .= space_br($state->lang === 0 ? "トップへ戻る" : "BACK TO TOP", 3);
+    $html .= space_br("</a>", 2);
+    $html .= space_br("</div>", 1);
+    return $html;
+}
+
 function get_lang_links($state): string
 {
     $html = space_br("<div class='lang'>", 1);
@@ -59,8 +69,11 @@ function get_thumb_div($pic, $state){
 
 function get_thumbs_html($link, $pics, $state){
     $html = "";
+//    var_dump($link);
+//    var_dump($pics);
+//    var_dump($state);
     for($i = $link->start; $i < $link->start + PNLG_MAX_TEXT_NUM; $i++){
-        if($i < $link->text_sum && $i < PHG_THUMBNAILS_PER_CATEGORY){
+        if($i < $link->end && isset($pics[$i])){
             $html .= get_thumb_div($pics[$i], $state);
 //            $html .= space_br("<hr>", 1);
 //            $html .= space_br("<h2>" . $pics[$i]->title . "</h2>", 1);
@@ -69,12 +82,17 @@ function get_thumbs_html($link, $pics, $state){
 //            $html .= space_br("</div>", 1);
         } else if($state->category === null){
             break;
-        } else {
-            $html .= get_thumb_div($pics[$i], $state);
         }
+//        else {
+//            $html .= get_thumb_div($pics[$i], $state);
+//        }
     }
     return $html;
 }
+
+//function get_search_array($state){
+//    return "&lang=" . $state->lang . "&category=" . $state->category;
+//}
 
 function get_category_div($category, $state): string
 {
@@ -101,13 +119,16 @@ function get_category_div($category, $state): string
     && $state->category === null)
     {
         $html .= space_br("<div class='seemore'>", 1);
-        $html .= space_br('<p><a href="' . PHG_INDEX_FILE_NAME . '?lang=' . $state->lang . '&category=' . $category->id . '">' . ($state->lang === 1 ? 'See More...' : 'もっと見る') . '</a></p>', 2);
+        $html .= space_br('<p><a href="' . PHG_INDEX_FILE_NAME . '?lang=' . $state->lang . '&category=' . $category->id . '&page=1' . '">' . ($state->lang === 1 ? 'See More...' : 'もっと見る') . '</a></p>', 2);
         $html .= space_br("</div>", 1);
     }
+//    var_dump($link);
     if(PHG_THUMBNAILS_PER_PAGE < $pic_nums
     && $state->category !== null)
     {
-        $html .= $link->get_page_links_html();
+//        var_dump($link);
+        $parameters = "&lang=" . $state->lang . "&category=" . $state->category;
+        $html .= $link->get_page_links_html($parameters);
     }
     return $html;
 }
@@ -139,6 +160,9 @@ function create_html($state): string
         }
     } else {
         $html = get_picture_page($categories[$state->category]->pictures[$state->pic], $state);
+    }
+    if($state->category !== null){
+        $html .= get_link_to_top($state);
     }
     $html .= get_lang_links($state);
     return $html;
