@@ -69,30 +69,15 @@ function get_thumb_div($pic, $state){
 
 function get_thumbs_html($link, $pics, $state){
     $html = "";
-//    var_dump($link);
-//    var_dump($pics);
-//    var_dump($state);
     for($i = $link->start; $i < $link->start + PNLG_MAX_TEXT_NUM; $i++){
         if($i < $link->end && isset($pics[$i])){
             $html .= get_thumb_div($pics[$i], $state);
-//            $html .= space_br("<hr>", 1);
-//            $html .= space_br("<h2>" . $pics[$i]->title . "</h2>", 1);
-//            $html .= space_br("<div>", 1);
-//            $html .= get_p_lines_html($pics[$i]->lines);
-//            $html .= space_br("</div>", 1);
         } else if($state->category === null){
             break;
         }
-//        else {
-//            $html .= get_thumb_div($pics[$i], $state);
-//        }
     }
     return $html;
 }
-
-//function get_search_array($state){
-//    return "&lang=" . $state->lang . "&category=" . $state->category;
-//}
 
 function get_category_div($category, $state): string
 {
@@ -101,19 +86,6 @@ function get_category_div($category, $state): string
     $html = space_br("<h2>" . $category->name[$state->lang] . "</h2>", 1);
     $html .= space_br("<div class='thumbs'>", 1);
     $html .= get_thumbs_html($link, $category->pictures, $state);
-//    $i = 0;
-//    foreach ($category->pictures as $pic){
-//        if($i < PHG_THUMBNAILS_PER_CATEGORY){
-//            $html .= get_thumbs_div($pic, $state);
-//        } else {
-//            if($state->category === null){
-//                break;
-//            } else {
-//                $html .= get_thumbs_div($pic, $state);
-//            }
-//        }
-//        $i++;
-//    }
     $html .= space_br("</div>", 1);
     if(PHG_THUMBNAILS_PER_CATEGORY < $pic_nums
     && $state->category === null)
@@ -122,11 +94,9 @@ function get_category_div($category, $state): string
         $html .= space_br('<p><a href="' . PHG_INDEX_FILE_NAME . '?lang=' . $state->lang . '&category=' . $category->id . '&page=1' . '">' . ($state->lang === 1 ? 'See More...' : 'もっと見る') . '</a></p>', 2);
         $html .= space_br("</div>", 1);
     }
-//    var_dump($link);
     if(PHG_THUMBNAILS_PER_PAGE < $pic_nums
     && $state->category !== null)
     {
-//        var_dump($link);
         $parameters = "&lang=" . $state->lang . "&category=" . $state->category;
         $html .= $link->get_page_links_html($parameters);
     }

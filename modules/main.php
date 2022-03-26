@@ -12,31 +12,6 @@ if (!function_exists('imagecreatetruecolor')) {
     exit;
 }
 
-//function get_pictures($list, $lang){
-//    if($list[0] === "no_list_mode"){
-//        $file_names = glob("img/*");
-//        $array = [];
-//        $i = 0;
-//        foreach ($file_names as $file){
-//            $temp = str_replace("img/", "", $file);
-//            array_push($array, new Picture($i, $temp . "|無題|コメントは特にありません。|UNKNOWN|No comment.", $lang));
-//            $i++;
-//        }
-//        return $array;
-//    } elseif ($list === null) {
-//        return null;
-//    } else {
-//        $array = [];
-//        $i = 0;
-//        foreach ($list as $line){
-//            $temp = str_replace(["\r", "\n", "\r\n"], "", $line);
-//            array_push($array, new Picture($i, $temp, $lang));
-//            $i++;
-//        }
-//        return $array;
-//    }
-//}
-
 function get_list($txt){
     if(file_exists($txt)){
         $array = file($txt);
