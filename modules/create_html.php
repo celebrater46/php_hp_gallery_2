@@ -40,23 +40,46 @@ function get_picture_page($picture, $state): string
     return $html;
 }
 
+function get_thumbs_div($pic, $state){
+    $thumb = PHG_THUMBNAIL_DIR_HTTP . "/" . $pic->thumb;
+    if(file_exists($thumb)){
+        $html = space_br("<div class='thumb box'>", 2);
+        $html .= space_br('<a href="' . PHG_INDEX_FILE_NAME . '?lang=' . $state->lang . '&category=' . $pic->category . '&pic=' . $pic->id . '">', 3);
+        $html .= space_br('<img src="' . $thumb . '">', 4);
+        $html .= space_br('</a>', 3);
+        $html .= space_br("</div>", 2);
+        return $html;
+    } else {
+        echo "NOT FOUND: " . $pic->thumb . "<br>";
+    }
+}
+
 function get_category_div($category, $state): string
 {
     $html = space_br("<h2>" . $category->name[$state->lang] . "</h2>", 1);
     $html .= space_br("<div class='thumbs'>", 1);
+    $i = 0;
     foreach ($category->pictures as $pic){
-        $thumb = PHG_THUMBNAIL_DIR_HTTP . "/" . $pic->thumb;
-        if(file_exists($thumb)){
-            $html .= space_br("<div class='thumb box'>", 2);
-            $html .= space_br('<a href="' . PHG_INDEX_FILE_NAME . '?lang=' . $state->lang . '&category=' . $pic->category . '&pic=' . $pic->id . '">', 3);
-            $html .= space_br('<img src="' . $thumb . '">', 4);
-            $html .= space_br('</a>', 3);
-            $html .= space_br("</div>", 2);
+        if($i < PHG_THUMBNAILS_PER_CATEGORY){
+            $html .= get_thumbs_div($pic, $state);
         } else {
-            echo "NOT FOUND: " . $pic->thumb . "<br>";
+            if($state->category === null){
+                break;
+            } else {
+                $html .= get_thumbs_div($pic, $state);
+            }
         }
+        $i++;
     }
     $html .= space_br("</div>", 1);
+    if(PHG_THUMBNAILS_PER_CATEGORY < count($category->pictures)
+    && $state->category === null)
+    {
+        $html .= space_br("<div class='seemore'>", 1);
+        $html .= space_br('<p><a href="' . PHG_INDEX_FILE_NAME . '?lang=' . $state->lang . '&category=' . $category->id . '">' . ($state->lang === 1 ? 'See More...' : 'もっと見る') . '</a></p>', 2);
+        $html .= space_br("</div>", 1);
+
+    }
     return $html;
 }
 
