@@ -11,17 +11,18 @@ require_once PHG_IU_DIR . "ImgUploader.php";
 echo "Hello World" . "<br>";
 
 $uploader = iu\iu_get_html("", false);
-var_dump($uploader);
+//var_dump($uploader);
 
 $image = $uploader->_imageFileName;
 $setter = new PhgSetter($image);
-var_dump($setter);
+//var_dump($setter);
 $line = $setter->get_line();
 $txt = "images.txt";
 if(file_exists($txt)){
     error_log((check_final_br($txt) ? "" : "\n") . $line . "\n", 3, $txt);
-    echo "Post '" . $image . "' Succeeded: " . $line;
-    echo '<img src="thumb/' . $image . '">';
+    echo "Posted '" . $image . "' successfully." . "<br>";
+    echo "Updated the list: " . $line . "' successfully." . "<br>";
+//    echo '<img src="thumb/' . $image . '">' . "<br>";
 } else {
     echo "NOT FOUND: " . $txt;
 }
@@ -34,8 +35,8 @@ if(file_exists($txt)){
 function check_final_br($txt){
     $lines = file($txt);
     $key = array_key_last($lines);
-    echo "substr: ";
-    var_dump(substr($lines[$key], -2));
+//    echo "substr: ";
+//    var_dump(substr($lines[$key], -2));
     if(substr($lines[$key], -1) === "\n"
         || substr($lines[$key], -1) === "\r"
         || substr($lines[$key], -1) === "\r\n"
