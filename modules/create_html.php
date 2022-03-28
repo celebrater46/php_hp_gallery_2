@@ -6,8 +6,8 @@ use php_hp_gallery\classes\Category;
 use php_number_link_generator\classes\NumberLink;
 
 require_once( dirname(__FILE__) . '/../classes/Category.php');
-require_once( dirname(__FILE__) . '/../php_number_link_generator_2/init.php');
-require_once( dirname(__FILE__) . '/../php_number_link_generator_2/classes/NumberLink.php');
+require_once( dirname(__FILE__) . '/../' . PHG_PNLG_DIR . 'init.php');
+require_once( dirname(__FILE__) . '/../' . PHG_PNLG_DIR . 'classes/NumberLink.php');
 
 function get_link_to_top($state): string
 {

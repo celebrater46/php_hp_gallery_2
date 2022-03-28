@@ -10,6 +10,8 @@ define('PHG_IMAGES_DIR', __DIR__ . '/img'); // 画像ファイルのディレク
 define('PHG_THUMBNAIL_DIR', __DIR__ . '/thumb'); // サムネイルディレクトリ
 define('PHG_IMAGES_DIR_HTTP', 'img'); // HTTPでアクセスした際にディレクトリが変わるので用意
 define('PHG_THUMBNAIL_DIR_HTTP', 'thumb');
+define('PHG_PNLG_DIR', 'php_number_link_generator_2/'); // php_number_link_generator_2 のディレクトリ
+define('PHG_IU_DIR', 'image_uploader_2/'); // image_uploader_2 のディレクトリ
 //define('PHG_THUMBNAIL_DIR_HTTP', 'http://localhost/myapps/php_hp_gallery/thumb');
 define('PHG_MULTI_LANGUAGE', true); // 日本語と英語の二ヶ国語表示にするか
 define('PHG_TITLE_AND_COMMENT', true); // 画像のタイトルとコメントを表示するか

@@ -133,6 +133,16 @@ div.lang a{
     font-size: 1rem;
 }
 
+div.container.uploader{
+    width: 640px;
+    text-align: left;
+}
+
+div.container.uploader textarea, div.container.uploader input.text{
+    color: silver;
+    background-color: #222222;
+}
+
 @media screen and (max-width: 1000px){
     div.container{
         width: 100%;
