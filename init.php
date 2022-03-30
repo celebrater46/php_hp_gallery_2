@@ -2,16 +2,18 @@
 
 namespace php_hp_gallery;
 
-//ini_set('display_errors', 1); // エラーメッセージを常時表示する
+ini_set('display_errors', 1); // エラーメッセージを常時表示する
 define('PHG_THUMBNAIL_SIZE', 400); // 自動生成されるサムネのサイズ（実際に表示されるのは CSS の div.thumb.box のサイズ）
 define('PHG_THUMBNAILS_PER_CATEGORY', 4); // 全カテゴリ表示モードの時に1カテゴリあたりいくつまでサムネイルを表示するか
 define('PHG_THUMBNAILS_PER_PAGE', 4); // カテゴリ表示モードの時に1ページあたりいくつまでサムネイルを表示するか
 define('PHG_IMAGES_DIR', __DIR__ . '/img'); // 画像ファイルのディレクトリ（__DIR__ は現在のディレクトリ取得）
 define('PHG_THUMBNAIL_DIR', __DIR__ . '/thumb'); // サムネイルディレクトリ
+//define('PHG_IMAGES_DIR', 'img'); // 画像ファイルのディレクトリ（__DIR__ は現在のディレクトリ取得）
+//define('PHG_THUMBNAIL_DIR', 'thumb'); // サムネイルディレクトリ
 define('PHG_IMAGES_DIR_HTTP', 'img'); // HTTPでアクセスした際にディレクトリが変わるので用意
 define('PHG_THUMBNAIL_DIR_HTTP', 'thumb');
-define('PHG_PNLG_DIR', 'php_number_link_generator_2/'); // php_number_link_generator_2 のディレクトリ
-define('PHG_IU_DIR', 'image_uploader_2/'); // image_uploader_2 のディレクトリ
+define('PHG_PNLG_DIR', 'plugins/php_number_link_generator_2/'); // php_number_link_generator_2 のディレクトリ
+define('PHG_IU_DIR', 'plugins/image_uploader_2/'); // image_uploader_2 のディレクトリ
 //define('PHG_THUMBNAIL_DIR_HTTP', 'http://localhost/myapps/php_hp_gallery/thumb');
 define('PHG_MULTI_LANGUAGE', true); // 日本語と英語の二ヶ国語表示にするか
 define('PHG_TITLE_AND_COMMENT', true); // 画像のタイトルとコメントを表示するか

@@ -4,5 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/image_uploader_2" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/php_number_link_generator_2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/image_uploader_2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/php_number_link_generator_2" vcs="Git" />
   </component>
 </project>
