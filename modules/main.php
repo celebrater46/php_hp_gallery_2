@@ -2,9 +2,12 @@
 
 namespace php_hp_gallery\modules;
 
+use fp_common_modules as cm;
+
 require_once ( dirname(__FILE__) . '/../init.php');
 require_once( dirname(__FILE__) . '/../classes/Picture.php');
-require_once "html_common_module.php";
+//require_once "html_common_module.php";
+require_once( dirname(__FILE__) . '/../' . PHG_HCM_PATH);
 
 // 画像処理に必要なプラグイン GD の有無
 if (!function_exists('imagecreatetruecolor')) {
@@ -17,7 +20,7 @@ function get_list($txt){
         $array = file($txt);
         $new_array = [];
         foreach ($array as $line){
-            array_push($new_array, delete_br($line));
+            array_push($new_array, cm\delete_br($line));
         }
         return $array;
     } else {

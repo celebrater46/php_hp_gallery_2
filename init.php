@@ -12,11 +12,12 @@ define('PHG_THUMBNAIL_DIR', __DIR__ . '/thumb'); // サムネイルディレク�
 //define('PHG_THUMBNAIL_DIR', 'thumb'); // サムネイルディレクトリ
 define('PHG_IMAGES_DIR_HTTP', 'img'); // HTTPでアクセスした際にディレクトリが変わるので用意
 define('PHG_THUMBNAIL_DIR_HTTP', 'thumb');
-define('PHG_PNLG_DIR', 'plugins/php_number_link_generator_2/'); // php_number_link_generator_2 のディレクトリ
-define('PHG_IU_DIR', 'plugins/image_uploader_2/'); // image_uploader_2 のディレクトリ
+define('PHG_PNLG_DIR', '../fp_common_modules/php_number_link_generator_2/'); // php_number_link_generator_2 のディレクトリ
+define('PHG_IU_DIR', '../image_uploader_2/'); // image_uploader_2 のディレクトリ
 //define('PHG_THUMBNAIL_DIR_HTTP', 'http://localhost/myapps/php_hp_gallery/thumb');
 define('PHG_MULTI_LANGUAGE', true); // 日本語と英語の二ヶ国語表示にするか
 define('PHG_TITLE_AND_COMMENT', true); // 画像のタイトルとコメントを表示するか
 define('PHG_SITE_NAME', ['マイギャラリー', 'My Gallery']); // タイトル（日本語, 英語）
 define('PHG_AUTHOR', ['富士見永人', 'Enin Fujimi']); // 管理者名（日本語, 英語）
 define('PHG_INDEX_FILE_NAME', "index.php"); // 外部サイトに組み込む場合、ここを変更
+define('PHG_HCM_PATH', "../fp_common_modules/html_common_module.php"); // html_common_module.php の場所
