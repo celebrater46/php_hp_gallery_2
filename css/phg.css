@@ -14,20 +14,6 @@ a {
     text-decoration: none;
 }
 
-a:link {
-    color: #ccccaa;
-}
-
-a:visited {
-    color: #aaaa88;
-}
-
-a:hover {
-    color: #ffffaa;
-    border-bottom: 0px solid yellow;
-    text-decoration: underline;
-}
-
 a:active {
     background-repeat : repeat;
 }
@@ -96,7 +82,7 @@ img.gallery.pic.x{
     width: 1200px;
 }
 
-div.texts{
+div.phg_texts{
     border: 4px double gray;
     text-align: left;
     width: 640px;
@@ -105,13 +91,13 @@ div.texts{
     padding: 30px;
 }
 
-div.texts h1{
+div.phg_texts h1{
     font-size: 1.2rem;
     font-weight: bold;
     margin: 10px auto;
 }
 
-div.texts h2{
+div.phg_texts h2{
     font-size: 1rem;
 }
 
@@ -149,6 +135,10 @@ div.container.uploader textarea, div.container.uploader input.text{
     background-color: #222222;
 }
 
+div.phg_end_blank{
+    height: 200px;
+}
+
 @media screen and (max-width: 1000px){
     div.container{
         width: 100%;
@@ -161,7 +151,7 @@ div.container.uploader textarea, div.container.uploader input.text{
         padding: 3vw;
     }
 
-    div.texts{
+    div.phg_texts{
         width: 100%;
     }
 
@@ -173,7 +163,7 @@ div.container.uploader textarea, div.container.uploader input.text{
         width: 100%;
     }
 
-    div.texts{
+    div.phg_texts{
         width: 80%;
         padding: 5%;
     }

@@ -18,7 +18,7 @@ function get_link_to_top($state): string
 {
     $html = cm\space_br("<div class='totop'>", 1);
     $html .= cm\space_br("<a href='" . PHG_INDEX . $state->get_url_parameters_to_top() . "'>", 2);
-    $html .= cm\space_br($state->lang === 0 ? "トップへ戻る" : "BACK TO TOP", 3);
+    $html .= cm\space_br($state->lang === 0 ? "一覧へ戻る" : "BACK TO INDEX", 3);
     $html .= cm\space_br("</a>", 2);
     $html .= cm\space_br("</div>", 1);
     return $html;
@@ -77,9 +77,9 @@ function get_picture_page($category, $state): string
     $html .= cm\space_br("</a>", 2);
     $html .= cm\space_br("</div>", 1);
     if($picture->title !== ""){
-        $html .= cm\space_br("<div class='texts'>", 1);
-        $html .= cm\space_br("<h1>" . $picture->title . "</h1>", 2);
-        $html .= cm\space_br("<h2>" . $picture->comment . "</h2>", 2);
+        $html .= cm\space_br("<div class='phg_texts'>", 1);
+        $html .= cm\space_br("<h1 class='phg_texts'>" . $picture->title . "</h1>", 2);
+        $html .= cm\space_br("<h2 class='phg_texts'>" . $picture->comment . "</h2>", 2);
         $html .= cm\space_br("</div>", 1);
     }
     $html .= cm\space_br("<div class='phg_links'>", 1);
@@ -99,7 +99,7 @@ function get_thumb_div($pic, $state){
 //    if(file_exists($thumb)){
     if ($res !== false) {
         $html = cm\space_br("<div class='thumb box'>", 2);
-        $html .= cm\space_br('<a href="' . PHG_INDEX . '?lang=' . $state->lang . '&category=' . $pic->category . '&pic=' . $pic->id . '">', 3);
+        $html .= cm\space_br('<a href="' . PHG_INDEX . '?lang=' . $state->lang . '&mode=' . $state->mode . '&category=' . $pic->category . '&pic=' . $pic->id . '">', 3);
         $html .= cm\space_br('<img src="' . $thumb . '">', 4);
         $html .= cm\space_br('</a>', 3);
         $html .= cm\space_br("</div>", 2);
@@ -133,7 +133,7 @@ function get_category_div($category, $state): string
     && $state->category === -1)
     {
         $html .= cm\space_br("<div class='seemore'>", 1);
-        $html .= cm\space_br('<p><a href="' . PHG_INDEX . $state->get_url_parameters("page", 1) . '">' . ($state->lang === 1 ? 'See More...' : 'もっと見る') . '</a></p>', 2);
+        $html .= cm\space_br('<p><a href="' . PHG_INDEX . $state->get_url_parameters("category", $category->id) . '">' . ($state->lang === 1 ? 'See More...' : 'もっと見る') . '</a></p>', 2);
         $html .= cm\space_br("</div>", 1);
     }
     if(PHG_THUMBNAILS_PER_PAGE < $pic_nums
@@ -159,6 +159,7 @@ function get_categories($state): array
 function create_html($state): string
 {
     $categories = get_categories($state);
+//    var_dump($categories);
     $html = "";
     if($state->pic === -1){
         if(isset(PHG_SITE_NAME[$state->lang])){
@@ -176,6 +177,9 @@ function create_html($state): string
     }
     if($state->category !== -1){
         $html .= get_link_to_top($state);
+    }
+    if($state->pic < 0){
+        $html .= cm\space_br("<div class='phg_end_blank'>　</div>", 2);
     }
 //    $html .= get_lang_links($state);
     return $html;

@@ -34,6 +34,20 @@ a{
     text-decoration: none;
 }
 
+a:link {
+    color: #ccccaa;
+}
+
+a:visited {
+    color: #aaaa88;
+}
+
+a:hover {
+    color: #ffffaa;
+    border-bottom: 0px solid yellow;
+    text-decoration: underline;
+}
+
 hr{
     opacity: 0.5;
     margin: 20px auto;
