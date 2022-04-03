@@ -53,7 +53,8 @@ class Picture
     }
 
     function check_img($file){
-        $img = PHG_IMAGES_DIR . "/" . $file;
+        $img = PHG_IMAGES_DIR . $file;
+//        var_dump($img);
         if(strpos($img, ".png") === false && strpos($img, ".jpg") === false && strpos($img, ".gif") === false){
             if(file_exists($img . ".png")){
                 return $file . ".png";
@@ -76,7 +77,8 @@ class Picture
     }
 
     function wide_or_not(){
-        $src = PHG_IMAGES_DIR . "/" . $this->file_name;
+        $src = PHG_IMAGES_DIR . $this->file_name;
+//        var_dump($src);
         $size = getimagesize($src); // [0] => x, [1] => y
         if($size[0] > $size[1]){
             return true;
@@ -89,7 +91,7 @@ class Picture
         if($this->file_name === null){
             $this->thumb = null;
         } else {
-            if(file_exists("thumb/" . $this->file_name) === false){
+            if(file_exists(PHG_THUMBNAIL_DIR . $this->file_name) === false){
                 $this->create_thumb($this->file_name);
             }
             return $this->file_name;
@@ -97,8 +99,8 @@ class Picture
     }
 
     function create_thumb($file){
-        $src = PHG_IMAGES_DIR . "/" . $file;
-        $to = PHG_THUMBNAIL_DIR . "/" . $file;
+        $src = PHG_IMAGES_DIR . $file;
+        $to = PHG_THUMBNAIL_DIR . $file;
         $size = getimagesize($src); // [0] => x, [1] => y
         $width = $size[0];
         $height = $size[1];
@@ -121,14 +123,14 @@ class Picture
         imagecopyresampled($created_img, $src_image, 0, 0, 0, 0, $thumb["x"], $thumb["y"], $width, $height);
         switch (substr($file, -3)) {
             case "git":
-                imagegif($created_img, PHG_THUMBNAIL_DIR . "/" . $file);
+                imagegif($created_img, PHG_THUMBNAIL_DIR . $file);
                 break;
             case "jpg":
             case "jpeg":
-                imagejpeg($created_img, PHG_THUMBNAIL_DIR . "/" . $file);
+                imagejpeg($created_img, PHG_THUMBNAIL_DIR . $file);
                 break;
             case "png":
-                imagepng($created_img, PHG_THUMBNAIL_DIR . "/" . $file);
+                imagepng($created_img, PHG_THUMBNAIL_DIR . $file);
                 break;
         }
     }
