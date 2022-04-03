@@ -59,7 +59,8 @@ class State
             if($num === null || $num === -1){
                 continue;
             }
-            $str .= ($key === "lang" ? "?" : "&") . $key . "=" . $num;
+//            $str .= ($key === "lang" ? "?" : "&") . $key . "=" . $num;
+            $str .= ($key === "lang" ? "" : "&") . $key . "=" . $num;
         }
         return $str;
     }
