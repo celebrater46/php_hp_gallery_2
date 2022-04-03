@@ -139,6 +139,12 @@ div.phg_end_blank{
     height: 200px;
 }
 
+p.pnlg_links > a{
+    font-size: 1.3rem;
+    display: inline-block;
+    padding: 0 8px;
+}
+
 @media screen and (max-width: 1000px){
     div.container{
         width: 100%;

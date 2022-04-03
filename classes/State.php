@@ -18,27 +18,55 @@ class State
         $this->mode = isset($_GET["mode"]) ? (int)$_GET["mode"] : 0;
     }
 
-    function get_additional_nums($str, $num){
-        $array = [
+//    function get_additional_nums($str, $num){
+//        $array = [
+//            "lang" => $this->lang,
+//            "mode" => $this->mode,
+//            "pic" => $this->pic,
+//            "category" => $this->category,
+//            "page" => $this->page
+//        ];
+//        if($str !== ""){
+//            $array[$str] = $num;
+//        }
+//        return $array;
+//    }
+
+    function get_url_parameters_to_top(){
+        return "lang=" . $this->lang . "&mode=" . $this->mode . "&category=-1&pic=-1";
+//        return "lang=" . $this->lang . "&mode=" . $this->mode . "&category=-1&pic=-1&page=" . $this->page;
+    }
+
+    function get_new_link($array){
+        $temp_array = [
             "lang" => $this->lang,
             "mode" => $this->mode,
             "pic" => $this->pic,
-            "category" => $this->category,
-            "page" => $this->page
+            "category" => $this->category
+//            "page" => $this->page
         ];
-        if($str !== ""){
-            $array[$str] = $num;
+        foreach ($array as $key => $num){
+            //$key_num === ["lang", 1];
+            $temp_array[$key] = $num;
         }
-        return $array;
+        return $temp_array;
     }
 
-    function get_url_parameters_to_top(){
-        return "?lang=" . $this->lang . "&mode=" . $this->mode . "&category=-1&pic=-1&page=" . $this->page;
+    function get_new_url_parameters($array){
+        $new_parameters = $this->get_new_link($array);
+        $str = "";
+        foreach ($new_parameters as $key => $num){
+            if($num === null || $num === -1){
+                continue;
+            }
+            $str .= ($key === "lang" ? "?" : "&") . $key . "=" . $num;
+        }
+        return $str;
     }
 
-    function get_url_parameters($str, $num){
-        $nums = $this->get_additional_nums($str, $num);
-        return "?lang=" . $nums["lang"] . "&mode=" . $nums["mode"] . "&category=" . $nums["category"] . "&pic=" . $nums["pic"] . "&page=" . $nums["page"];
-//        return "?lang=" . $this->lang . "&category=" . $this->category . "&pic=" . $this->pic . "&page=" . $this->page;
-    }
+//    function get_url_parameters($array){
+//        $nums = $this->get_additional_nums($array);
+//        return "lang=" . $nums["lang"] . "&mode=" . $nums["mode"] . "&category=" . $nums["category"] . "&pic=" . $nums["pic"] . "&page=" . $nums["page"];
+////        return "?lang=" . $this->lang . "&category=" . $this->category . "&pic=" . $this->pic . "&page=" . $this->page;
+//    }
 }
