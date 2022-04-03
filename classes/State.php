@@ -24,9 +24,13 @@ class State
             "page" => $this->page
         ];
         if($str !== ""){
-            $array[$str] += $num;
+            $array[$str] = $num;
         }
         return $array;
+    }
+
+    function get_url_parameters_to_top(){
+        return "?lang=" . $this->lang . "&category=-1&pic=-1&page=" . $this->page;
     }
 
     function get_url_parameters($str, $num){

@@ -15,7 +15,7 @@ require_once PHG_HCM_PATH;
 function get_link_to_top($state): string
 {
     $html = cm\space_br("<div class='totop'>", 1);
-    $html .= cm\space_br("<a href='" . PHG_INDEX . "?lang=" . ($state->lang === 1 ? "0" : "1") . "'>", 2);
+    $html .= cm\space_br("<a href='" . PHG_INDEX . $state->get_url_parameters_to_top() . "'>", 2);
     $html .= cm\space_br($state->lang === 0 ? "トップへ戻る" : "BACK TO TOP", 3);
     $html .= cm\space_br("</a>", 2);
     $html .= cm\space_br("</div>", 1);
@@ -25,7 +25,8 @@ function get_link_to_top($state): string
 function get_lang_links($state): string
 {
     $html = cm\space_br("<div class='lang'>", 1);
-    $html .= cm\space_br("<a href='" . PHG_INDEX . "?lang=" . ($state->lang === 1 ? "0" : "1") . ($state->category === -1 ? "" : "&category=" . $state->category) . ($state->pic === -1 ? "" : "&pic=" . $state->pic) . "'>", 2);
+//    $html .= cm\space_br("<a href='" . PHG_INDEX . "?lang=" . ($state->lang === 1 ? "0" : "1") . ($state->category === -1 ? "" : "&category=" . $state->category) . ($state->pic === -1 ? "" : "&pic=" . $state->pic) . "'>", 2);
+    $html .= cm\space_br("<a href='" . PHG_INDEX . $state->get_url_parameters("lang", $state->lang === 1 ? 0 : 1) . "'>", 2);
     $html .= cm\space_br($state->lang === 1 ? "日本語" : "ENGLISH", 3);
     $html .= cm\space_br("</a>", 2);
     $html .= cm\space_br("</div>", 1);
@@ -35,7 +36,7 @@ function get_lang_links($state): string
 function get_prev_arrow($state){
     $html = cm\space_br("<div class='prev'>", 2);
     if($state->pic > 0){
-        $html .= cm\space_br("<a href='" . PHG_INDEX . $state->get_url_parameters("pic", -1) . "'>＜＜</a>", 3);
+        $html .= cm\space_br("<a href='" . PHG_INDEX . $state->get_url_parameters("pic", $state->pic - 1) . "'>＜＜</a>", 3);
     } else {
         $html .= cm\space_br("　 ", 3);
     }
@@ -46,7 +47,7 @@ function get_prev_arrow($state){
 function get_next_arrow($category, $state){
     $html = cm\space_br("<div class='next'>", 2);
     if($state->pic < count($category->pictures) - 1){
-        $html .= cm\space_br("<a href='" . PHG_INDEX . $state->get_url_parameters("pic", 1) . "'>＞＞</a>", 3);
+        $html .= cm\space_br("<a href='" . PHG_INDEX . $state->get_url_parameters("pic", $state->pic + 1) . "'>＞＞</a>", 3);
     } else {
         $html .= cm\space_br("　 ", 3);
     }
@@ -82,7 +83,7 @@ function get_picture_page($category, $state): string
     $html .= cm\space_br("<div class='phg_links'>", 1);
     $html .= get_prev_arrow($state);
     $html .= cm\space_br("<div class='back'>", 2);
-    $html .= cm\space_br("<a href='" . PHG_INDEX . $state->get_url_parameters("", 0) . "'>" . ($state->lang === 1 ? "BACK" : "戻る") . "</a>", 3);
+    $html .= cm\space_br("<a href='" . PHG_INDEX . $state->get_url_parameters("pic", -1) . "'>" . ($state->lang === 1 ? "BACK" : "戻る") . "</a>", 3);
     $html .= cm\space_br("</div>", 2);
     $html .= get_next_arrow($category, $state);
     $html .= cm\space_br("</div>", 1);
@@ -173,6 +174,6 @@ function create_html($state): string
     if($state->category !== -1){
         $html .= get_link_to_top($state);
     }
-    $html .= get_lang_links($state);
+//    $html .= get_lang_links($state);
     return $html;
 }
