@@ -13,7 +13,6 @@ require_once "classes/State.php";
 
 $state = new State();
 
-
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $state->lang === 1 ? 'en' : 'ja'; ?>">

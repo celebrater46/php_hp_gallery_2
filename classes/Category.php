@@ -4,6 +4,8 @@ namespace php_hp_gallery\classes;
 
 use function php_hp_gallery\modules\get_list;
 
+require_once dirname(__FILE__) . '/../init.php';
+
 class Category
 {
     public $id;
@@ -18,7 +20,7 @@ class Category
     }
 
     function get_pictures($state){
-        $images = get_list("images.txt");
+        $images = get_list(PHG_PATH . "images.txt");
         $pics = [];
         if($images !== null){
             $i = 0;

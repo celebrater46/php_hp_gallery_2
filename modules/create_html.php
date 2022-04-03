@@ -7,9 +7,11 @@ use php_hp_gallery\classes\Category;
 use php_number_link_generator\classes\NumberLink;
 use fp_common_modules as cm;
 
+require_once dirname(__FILE__) . '/../init.php';
+require_once 'main.php';
+require_once PHG_PATH . 'classes/Category.php';
 require_once PHG_PNLG_DIR . 'init.php';
 require_once PHG_PNLG_DIR . 'classes/NumberLink.php';
-require_once dirname(__FILE__) . '/../classes/Category.php';
 require_once PHG_HCM_PATH;
 
 function get_link_to_top($state): string
@@ -131,7 +133,7 @@ function get_category_div($category, $state): string
     && $state->category === -1)
     {
         $html .= cm\space_br("<div class='seemore'>", 1);
-        $html .= cm\space_br('<p><a href="' . PHG_INDEX . '?lang=' . $state->lang . '&category=' . $category->id . '&page=1' . '">' . ($state->lang === 1 ? 'See More...' : 'もっと見る') . '</a></p>', 2);
+        $html .= cm\space_br('<p><a href="' . PHG_INDEX . $state->get_url_parameters("page", 1) . '">' . ($state->lang === 1 ? 'See More...' : 'もっと見る') . '</a></p>', 2);
         $html .= cm\space_br("</div>", 1);
     }
     if(PHG_THUMBNAILS_PER_PAGE < $pic_nums
@@ -145,7 +147,8 @@ function get_category_div($category, $state): string
 
 function get_categories($state): array
 {
-    $categories_lines = get_list("categories.txt");
+    $categories_lines = get_list(PHG_PATH . "categories.txt");
+//    var_dump($categories_lines);
     $array = [];
     foreach ($categories_lines as $line){
         array_push($array, new Category($line, $state));
