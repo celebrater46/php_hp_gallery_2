@@ -21,7 +21,7 @@ $state = new State();
     <meta name="Author" content="<?php echo PHG_AUTHOR[$state->lang]; ?>">
     <title><?php echo PHG_SITE_NAME[$state->lang]; ?></title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/phg.css">
     <link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>

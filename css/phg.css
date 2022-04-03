@@ -115,9 +115,15 @@ div.texts h2{
     font-size: 1rem;
 }
 
-div.back {
+div.phg_links{
+    display: flex;
     margin: 0 auto;
     padding: 50px 0 50px;
+    justify-content: center;
+}
+
+div.phg_links > div {
+    width: 150px;
 }
 
 div.back a{

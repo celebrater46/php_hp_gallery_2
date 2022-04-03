@@ -39,7 +39,7 @@ EOT;
     <meta charset="UTF-8">
     <title>Upload Pictures</title>
     <link rel="stylesheet" href="css/main.css" type="text/css">
-    <link rel="stylesheet" href="css/gallery.css" type="text/css">
+    <link rel="stylesheet" href="css/phg.css" type="text/css">
 </head>
 <body>
 <div class="container uploader">
