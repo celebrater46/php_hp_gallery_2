@@ -145,6 +145,10 @@ p.pnlg_links > a{
     padding: 0 8px;
 }
 
+p.phg_texts{
+    font-size: 0.9rem;
+}
+
 @media screen and (max-width: 1000px){
     div.container{
         width: 100%;

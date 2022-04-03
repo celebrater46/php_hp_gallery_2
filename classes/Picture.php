@@ -5,6 +5,7 @@ namespace php_hp_gallery\classes;
 class Picture
 {
     public $id;
+    public $date;
     public $category;
     public $file_name;
     public $thumb;
@@ -14,6 +15,8 @@ class Picture
 
     function __construct($id, $category, $array, $lang){
         $this->id = $id;
+//        $this->date = $array[2];
+        $this->date = $this->get_date($array[2], $lang);
         $this->category = $category;
         $this->file_name = $this->check_img($array[1]);
         $this->thumb = $this->check_thumb();
@@ -22,22 +25,29 @@ class Picture
         $this->is_wide = $this->wide_or_not();
     }
 
-    function get_name($array, $lang){
-        if(!(isset($array[2]))){
-            return "";
-        }
-        if($lang !== 1){
-            return $array[2];
-        } else {
-            if(isset($array[4])){
-                return $array[4];
-            } else{
-                return "";
+    function get_date($date, $lang){
+        if($date !== "__UNKNOWN__"){
+            if(strlen($date) === 7){
+                $head = $lang === 1 ? "Publish Date: " : "公開時期： ";
+                if($lang === 1){
+                    return $head . date('M Y',  strtotime($date));
+                } else {
+                    return $head . date('Y年n月',  strtotime($date)) . "頃";
+                }
+            } else if(strlen($date) === 10){
+                $head = $lang === 1 ? "Publish Date: " : "公開日： ";
+                if($lang === 1){
+                    return $head . date('M j Y',  strtotime($date));
+                } else {
+                    return $head . date('Y年n月j日',  strtotime($date));
+                }
             }
         }
+        $head = $lang === 1 ? "Publish Date: " : "公開時期： ";
+        return $head . ($lang === 1 ? "UNKNOWN" : "不明");
     }
 
-    function get_comment($array, $lang){
+    function get_name($array, $lang){
         if(!(isset($array[3]))){
             return "";
         }
@@ -46,6 +56,21 @@ class Picture
         } else {
             if(isset($array[5])){
                 return $array[5];
+            } else{
+                return "";
+            }
+        }
+    }
+
+    function get_comment($array, $lang){
+        if(!(isset($array[4]))){
+            return "";
+        }
+        if($lang !== 1){
+            return $array[4];
+        } else {
+            if(isset($array[6])){
+                return $array[6];
             } else{
                 return "";
             }

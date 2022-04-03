@@ -80,6 +80,7 @@ function get_picture_page($category, $state): string
         $html .= cm\space_br("<div class='phg_texts'>", 1);
         $html .= cm\space_br("<h1 class='phg_texts'>" . $picture->title . "</h1>", 2);
         $html .= cm\space_br("<h2 class='phg_texts'>" . $picture->comment . "</h2>", 2);
+        $html .= cm\space_br("<p class='phg_texts'>" . $picture->date . "</p>", 2);
         $html .= cm\space_br("</div>", 1);
     }
     $html .= cm\space_br("<div class='phg_links'>", 1);
