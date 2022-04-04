@@ -1,0 +1,123 @@
+0|g01001|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01002|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01004|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01005|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01006|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01007|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01008|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01009|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01010|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01011|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01012|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01013|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01014|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01015|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01016|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01017|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01018|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01019|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01020|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01021|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01022|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01023|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01024|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01025|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01026|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01027|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01028|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01029|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01030|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01031|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01032|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01033|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01034|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01035|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01036|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01037|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01038|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01039|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01040|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01041|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01042|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01043|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01044|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01045|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01046|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01047|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01048|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01049|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01050|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01051|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01052|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01053|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01054|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01055|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01056|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01057|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01058|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01059|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01060|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01061|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+0|g01062|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02001|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02002|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02003|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02004|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02005|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02006|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02007|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02008|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02009|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02010|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02011|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02012|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02013|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02014|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02015|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02016|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02017|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02018|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02019|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02020|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02021|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02022|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02023|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02024|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02025|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02026|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02027|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02028|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02029|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02030|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02031|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02032|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g02033|__UNKNOWN__|Merry X'mas|小説。|Merry X'mas|X'mas present.
+1|g09001|__UNKNOWN__||||
+1|g09002|__UNKNOWN__||||
+1|g09003|__UNKNOWN__||||
+1|g09004|__UNKNOWN__||||
+1|g09005|__UNKNOWN__||||
+1|g09006|__UNKNOWN__||||
+1|g09007|__UNKNOWN__||||
+1|g09008|__UNKNOWN__||||
+1|g09009|__UNKNOWN__||||
+1|g09010|__UNKNOWN__||||
+1|g09011|__UNKNOWN__||||
+1|g09012|__UNKNOWN__||||
+1|g09013|__UNKNOWN__||||
+1|g09014|__UNKNOWN__||||
+1|g09015|__UNKNOWN__||||
+1|g09016|__UNKNOWN__||||
+1|g09017|__UNKNOWN__||||
+1|g09018|__UNKNOWN__||||
+1|g09019|__UNKNOWN__||||
+1|g09020|__UNKNOWN__||||
+1|g09021|__UNKNOWN__||||
+1|g09022|__UNKNOWN__||||
+0|201223|__UNKNOWN__|Merry X'mas|小説「白金記」よりサリーさんがクリスマスプレゼントを持ってきてくれたようです。|Merry X'mas|Sally might give you a certain gift as X'mas present.
+0|201230|2020-12-30|Happy New Year 2021|小説「第三世界収容所」より、罰の天使サーマさんです。|Happy New Year 2021|Her name is "Sarma". She is the angel of punishment in my novel "The 3rd Prison".
+0|210804|2021-08|ヒヅル様がセーラー服姿を披露されたようです|年甲斐もなk……おっと、誰か来たようだ。|That suits Hizuru-sama|Hizuru-sama is wearing a sailor suit. Praise her.
+0|210112|__UNKNOWN__|ヒヅル様、巨大ロボをお造りになる|小説「白金記」……ではなく作品の壁を超越して極楽戦争に乗り込んでいった時のヒヅル様です。|Hizuru-sama made the biggest robot|This is the scene of Gokuraku-War. Not Shiroganeki.
+1|211212|__UNKNOWN__||||
+0|220101|__UNKNOWN__|転生先の異世界の女神がヒヅル様だった件|そう……チートスキルなどに頼ろうなど軟弱者の考えなのです。|Goddess Of Another World|I might have died. The Heartless Goddess will do violenc... no, she will make me stronger.
+0|1648498014_7c7b839eec0b5e0c71155ec09931a98b03b5a6b1.jpg|__UNKNOWN__|現場ミク|テスト投稿|Genba Miku|Posting test.

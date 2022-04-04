@@ -113,7 +113,8 @@ function get_thumb_div($pic, $state){
 
 function get_thumbs_html($link, $pics, $state){
     $html = "";
-    for($i = $link->start; $i < $link->start + PNLG_MAX_TEXT_NUM; $i++){
+//    for($i = $link->start; $i < $link->start + PNLG_MAX_TEXT_NUM; $i++){
+    for($i = $link->start; $i < $link->start + PHG_THUMBNAILS_PER_CATEGORY; $i++){
         if($i < $link->end && isset($pics[$i])){
             $html .= get_thumb_div($pics[$i], $state);
         } else if($state->category === -1){

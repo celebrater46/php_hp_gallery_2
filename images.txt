@@ -1,7 +1,73 @@
-0|201223|__UNKNOWN__|Merry X'mas|小説「白金記」よりサリーさんがクリスマスプレゼントを持ってきてくれたようです。|Merry X'mas|Sally might give you a certain gift as X'mas present.
-0|201230|2020-12-30|Happy New Year 2021|小説「第三世界収容所」より、罰の天使サーマさんです。|Happy New Year 2021|Her name is "Sarma". She is the angel of punishment in my novel "The 3rd Prison".
-0|210804|2021-08|ヒヅル様がセーラー服姿を披露されたようです|年甲斐もなk……おっと、誰か来たようだ。|That suits Hizuru-sama|Hizuru-sama is wearing a sailor suit. Praise her.
-0|210112|__UNKNOWN__|ヒヅル様、巨大ロボをお造りになる|小説「白金記」……ではなく作品の壁を超越して極楽戦争に乗り込んでいった時のヒヅル様です。|Hizuru-sama made the biggest robot|This is the scene of Gokuraku-War. Not Shiroganeki.
-1|211212|__UNKNOWN__||||
-0|220101|__UNKNOWN__|転生先の異世界の女神がヒヅル様だった件|そう……チートスキルなどに頼ろうなど軟弱者の考えなのです。|Goddess Of Another World|I might have died. The Heartless Goddess will do violenc... no, she will make me stronger.
-0|1648498014_7c7b839eec0b5e0c71155ec09931a98b03b5a6b1.jpg|__UNKNOWN__|現場ミク|テスト投稿|Genba Miku|Posting test.
+0|g01006|__UNKNOWN__|銃剣堂||店長とアルバイト|The master and the employee of Gun Sword Store|0
+0|g01010|__UNKNOWN__|CB400SS||納車記念に描いた一枚|The souvenir that bought the CB400SS|0
+0|g01012|__UNKNOWN__|NEMESIS||銀髪の復讐鬼|The silver haired assassin|0
+0|g01019|__UNKNOWN__|BLACK REVENGER||魔女狩りで殺されて、本物の魔女になった娘|She is the girl who was killed in witch hunt.|0
+0|g01017|__UNKNOWN__|年賀状2009||今年もよろしくお願いします|Happy new year! Have a great year everyone.|0
+0|g01020|__UNKNOWN__|紅ちゃん||怪力少女降臨|This girl is very powerful|0
+0|g01021|__UNKNOWN__|夕焼け||空の芸術|The art of sky|0
+0|g01022|__UNKNOWN__|年賀状2010||今年もよろしくお願いします|Happy new year! Have a great year everyone.|0
+0|g01023|__UNKNOWN__|バイオレンスモード||誰も彼女を止められない|We couldn't bring the girl under control|0
+0|g01024|__UNKNOWN__|Andromeda||遠方の銀河のプリンセス|She is the Princess of Andromeda Empire|0
+0|g01027|__UNKNOWN__|デュクシ||よい子はマネしないでね|The evil meets a tragic end|0
+0|g01029|__UNKNOWN__|100万ドルの笑顔||女の子は笑顔が一番|A girl when is a smile is best|0
+0|g01030|__UNKNOWN__|撲殺天使デス子ちゃん||打率は9割9分9厘|Her batting average is .999|0
+0|g01031|__UNKNOWN__|日出処看板娘||イツモ静カニ笑ツテイル|She is always a kind smile|0
+0|g01032|__UNKNOWN__|天女||明けましておめでとうございます|A happy new year|0
+0|g01033|__UNKNOWN__|斬||刃物の扱いは超一流|Her knife skill is a great|0
+0|g01035|__UNKNOWN__|RED MONSTER||300キロの鉄球を振り回す|She can swing a iron ball that is over 300 kg|0
+0|g01036|__UNKNOWN__|下々の者をいじめるのが好きな欲求不満の変態女王様||某裁判ドラマで上記のセリフを聞いてピンと来て描いた|Kneel, foolish people|0
+0|g01037|__UNKNOWN__|世界征服系女子||共に世界を変えませんか？|Would you change the world with me?|0
+0|g01038|__UNKNOWN__|<h1 class="h1_cg">あなたは働きますか？|- Do you work? -</h1>|0
+0|g01040|__UNKNOWN__|A HAPPY NEW YEAR 2014||今年もよろしくお願いします|We are looking forward to seeing you again this year|0
+0|g01042|__UNKNOWN__|ブラックローズさん||千の刃物をその身に宿す黒き薔薇。彼女に狩られた獲物は、もはや原型を留めるどころか「赤くてドロドロした何か」になり果てるという|The daughter called "the Black Rose" has a thousand swords. Nobody is able to run away from her|0
+0|g01043|__UNKNOWN__|白金ヒヅル||サイトの看板娘の白金ヒヅル様です|The Leader of Eningrad. Her name is Hizuru Shirogane|0
+0|g01044|__UNKNOWN__|アサシン系女子||我が家のアサシン系女子、名前はMOMO（モモ）です|She is an assassin called "MOMO"|0
+0|g01045|__UNKNOWN__|デレ||威厳溢れる民族の太陽様も時にはデレるのです|It's rare for her - the Holy Platinum Sun - to be shy|0
+0|g01046|__UNKNOWN__|爆 撃郎||昔描いた格闘技漫画の主人公|He is the fighter who use the "Burning-Karate". His name is Gekirou Baku|0
+0|g01048|__UNKNOWN__|嵐山龍||漫画「銃剣堂」より。カンフー着を着てますが、空手使いです|He is the Karate fighter who appears in the Gun Sword Store|0
+0|g01049|__UNKNOWN__|普通の魔女||自作ゲーム「バーチークエスト」より。普通の魔女、サマンサ|This witch appears in BA-CHI QUEST. Her name is Samantha|0
+0|g01050|__UNKNOWN__|キャバ嬢系女子||漫画「銃剣堂」より。吉良真理亜（キャバ嬢時代）です|She is the hostess who appears in the Gun Sword Store. Her name is Maria Kira|0
+0|g01051|__UNKNOWN__|魔法剣士||自作ゲーム「バーチークエスト」より。魔法剣士アルネさんです|She is the devil slayer who appears in BA-CHI QUEST. Her name is Alne|0
+0|g01052|__UNKNOWN__|アヤメちゃん||自作ゲーム「バーチークエスト」より。謎の殺し屋少女アヤメちゃん（29）です|She is a very powerful assassin in my game BA-CHI QUEST. Her name is Ayame|0
+0|g01053|__UNKNOWN__|カトリーヌ姫||自作ゲーム「バーチークエスト」より。バーチー王国王女カトリーヌ姫様です|She is the princess who appears in BA-CHI QUEST. Her name is Catherine|0
+0|g01054|__UNKNOWN__|悪王ルシル||自作ゲーム「バーチークエスト」より。海上都市キサラドゥの支配者・悪王ルシル様です|She is the queen of devil who appears in BA-CHI QUEST. Her name is Lucille|0
+0|g01055|__UNKNOWN__|極楽戦争||自作小説「極楽戦争」より|Battle of Heaven is the novel written by Enin Fujimi|0
+0|g01056|__UNKNOWN__|謹賀新年2015||うちの看板娘の白金ヒヅル様と、ツイッターのフォロワーさんのキャラをお借りしてのコラボ絵です|This picture is a collaboration with my friends|0
+0|g01057|__UNKNOWN__|QUEEN ON THE KING||百獣の王と人類の女王|The King of Beasts and The Queen of Human|0
+0|g01059|__UNKNOWN__|極楽戦争 - End of End||自作小説「極楽戦争」の扉絵として描いたもの。||0
+0|g01060|__UNKNOWN__|白金ヒデルと白金ヒヅル||二人の《白金》。||0
+0|g01061|__UNKNOWN__|白金記 - Unify the World||自作小説「白金記」の扉絵として描いたもの。||0
+0|g01062|__UNKNOWN__|神仏非習合||自作小説「神仏非習合」の扉絵として描いたもの。||0
+1|g02005|__UNKNOWN__|東方キャラソート||東方キャラソート上位10名|These 10 women are the best characters of the Toho-project who I love|0
+1|g02008|__UNKNOWN__|八雲紫||東方プロジェクト様より、スキマ妖怪・八雲紫（やくもゆかり）さんです|Yukari Yakumo is a lady who is mysterious and sexy in Toho-Project|0
+1|g02009|__UNKNOWN__|比那名居天子||東方プロジェクト様より、非想非非想天の娘・比那名居天子（ひなないてんし）さんです|Tenko Hinanai is a girl who is so active and fanny in Toho-Project|0
+1|g06003|__UNKNOWN__|マグナムエース||ビーンボール|A bean ball|0
+1|g06006|__UNKNOWN__|未来日記||後ろの人が別人|Yuno Gasai and Yukky Amano|0
+1|g06007|__UNKNOWN__|ヴォル・ドラゴン||ヴォル戦初勝利記念絵|The King of Volcano|0
+1|g07003|__UNKNOWN__|ソフィー＆アラク||TwitterフォロワーのBellさん家よりソフィーさん、アラクさんです|They are from Bell's World|0
+1|g07004|__UNKNOWN__|秋月神楽||TwitterフォロワーのBellさん家より秋月神楽さんです|She is Kagura Akitsuki from Bell's World|0
+1|g07005|__UNKNOWN__|まだお||オンラインゲームPSO2フレンドのまだおさん（自画像）です|Madao is very sexy woman, she is my friend in PSO2|0
+1|g07006|__UNKNOWN__|ZERO||オンラインゲームPSO2フレンドのZEROさん（自画像）です|Zero is the Knight of the Abyss. He is my friend in PSO2. 進路指導 means "Special Kind of Love"|0
+1|g07007|__UNKNOWN__|成瀬葵||Twitterフォロワーの梓さん家より成瀬葵さんです|Aoi Naruse is the Samurai master from Aznyan's World|0
+2|g09001|__UNKNOWN__|||||0
+2|g09002|__UNKNOWN__|||||0
+2|g09003|__UNKNOWN__|||||0
+2|g09004|__UNKNOWN__|||||0
+2|g09005|__UNKNOWN__|||||0
+2|g09006|__UNKNOWN__|||||0
+2|g09007|__UNKNOWN__|||||0
+2|g09008|__UNKNOWN__|||||0
+2|g09009|__UNKNOWN__|||||0
+2|g09010|__UNKNOWN__|||||0
+2|g09011|__UNKNOWN__|||||0
+2|g09012|__UNKNOWN__|||||0
+2|g09013|__UNKNOWN__|||||0
+2|g09014|__UNKNOWN__|||||0
+2|g09015|__UNKNOWN__|||||0
+2|g09016|__UNKNOWN__|||||0
+2|g09017|__UNKNOWN__|||||0
+2|g09018|__UNKNOWN__|||||0
+2|g09019|__UNKNOWN__|||||0
+2|g09020|__UNKNOWN__|||||0
+2|g09021|__UNKNOWN__|||||0
+2|g09022|__UNKNOWN__|||||0

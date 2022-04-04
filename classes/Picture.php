@@ -54,8 +54,8 @@ class Picture
         if($lang !== 1){
             return $array[3];
         } else {
-            if(isset($array[5])){
-                return $array[5];
+            if(isset($array[4])){
+                return $array[4];
             } else{
                 return "";
             }
@@ -63,11 +63,11 @@ class Picture
     }
 
     function get_comment($array, $lang){
-        if(!(isset($array[4]))){
+        if(!(isset($array[5]))){
             return "";
         }
         if($lang !== 1){
-            return $array[4];
+            return $array[5];
         } else {
             if(isset($array[6])){
                 return $array[6];
