@@ -32,10 +32,13 @@ div.container > div.thumbs{
     display: flex;
     flex-wrap: wrap;
     padding: 0 40px;
+    margin: 0 auto 50px;
 }
 
 div.seemore{
-    padding: 0 0 50px;
+    width: 100%;
+    padding: 0;
+    text-align: center;
 }
 
 div.seemore > p > a{
@@ -152,7 +155,13 @@ p.phg_texts{
 @media screen and (max-width: 1000px){
     div.container{
         width: 100%;
-        padding: 50px 0 0;
+        margin: 0;
+        padding: 150px 0 0;
+    }
+
+    div.container > div.thumbs{
+        margin: 0 auto 5vh;
+        padding: 0;
     }
 
     div.thumb.box {

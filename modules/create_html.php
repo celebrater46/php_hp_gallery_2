@@ -131,14 +131,14 @@ function get_category_div($category, $state): string
     $html = cm\space_br("<h2>" . $category->name[$state->lang] . "</h2>", 1);
     $html .= cm\space_br("<div class='thumbs'>", 1);
     $html .= get_thumbs_html($link, $category->pictures, $state);
-    $html .= cm\space_br("</div>", 1);
     if(PHG_THUMBNAILS_PER_CATEGORY < $pic_nums
-    && $state->category === -1)
+        && $state->category === -1)
     {
         $html .= cm\space_br("<div class='seemore'>", 1);
         $html .= cm\space_br('<p><a href="' . PHG_INDEX . "?" . $state->get_new_url_parameters(["category" => $category->id]) . '">' . ($state->lang === 1 ? 'See More...' : 'もっと見る') . '</a></p>', 2);
         $html .= cm\space_br("</div>", 1);
     }
+    $html .= cm\space_br("</div>", 1);
     if(PHG_THUMBNAILS_PER_PAGE < $pic_nums
     && $state->category !== -1)
     {
