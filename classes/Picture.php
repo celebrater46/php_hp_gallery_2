@@ -48,32 +48,19 @@ class Picture
     }
 
     function get_name($array, $lang){
-        if(!(isset($array[3]))){
-            return "";
-        }
         if($lang !== 1){
-            return $array[3];
+            return $array[3] ?? "";
+
         } else {
-            if(isset($array[4])){
-                return $array[4];
-            } else{
-                return "";
-            }
+            return $array[4] ?? "";
         }
     }
 
     function get_comment($array, $lang){
-        if(!(isset($array[5]))){
-            return "";
-        }
         if($lang !== 1){
-            return $array[5];
+            return $array[5] ?? "";
         } else {
-            if(isset($array[6])){
-                return $array[6];
-            } else{
-                return "";
-            }
+            return $array[6] ?? "";
         }
     }
 

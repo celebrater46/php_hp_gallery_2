@@ -1,4 +1,4 @@
-0|g01006|__UNKNOWN__|銃剣堂||店長とアルバイト|The master and the employee of Gun Sword Store|0
+0|g01006|__UNKNOWN__|銃剣堂|JU-KEN-DO|店長とアルバイト|The master and the employee of Gun Sword Store|0
 0|g01010|__UNKNOWN__|CB400SS||納車記念に描いた一枚|The souvenir that bought the CB400SS|0
 0|g01012|__UNKNOWN__|NEMESIS||銀髪の復讐鬼|The silver haired assassin|0
 0|g01019|__UNKNOWN__|BLACK REVENGER||魔女狩りで殺されて、本物の魔女になった娘|She is the girl who was killed in witch hunt.|0

@@ -156,7 +156,11 @@ p.phg_texts{
     div.container{
         width: 100%;
         margin: 0;
-        padding: 150px 0 0;
+        padding: 180px 0 0;
+    }
+
+    h1{
+        margin: 20px auto 50px;
     }
 
     div.container > div.thumbs{
