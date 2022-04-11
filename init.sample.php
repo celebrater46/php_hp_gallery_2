@@ -9,6 +9,7 @@ define('PHG_THUMBNAILS_PER_CATEGORY', 4); // 全カテゴリ表示モードの�
 define('PHG_THUMBNAILS_PER_PAGE', 4); // カテゴリ表示モードの時に1ページあたりいくつまでサムネイルを表示するか
 define('PHG_MULTI_LANGUAGE', true); // 日本語と英語の二ヶ国語表示にするか
 define('PHG_TITLE_AND_COMMENT', true); // 画像のタイトルとコメントを表示するか
+define('PHG_ORDER_NEW', true); // サムネイルの順番（true で新着順）
 define('PHG_SITE_NAME', ['マイギャラリー', 'My Gallery']); // タイトル（日本語, 英語）
 define('PHG_AUTHOR', ['富士見永人', 'Enin Fujimi']); // 管理者名（日本語, 英語）
 

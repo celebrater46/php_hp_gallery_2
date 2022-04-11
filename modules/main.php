@@ -18,7 +18,7 @@ if (!function_exists('imagecreatetruecolor')) {
 function get_list($txt){
     if(file_exists($txt)){
         $array = file($txt);
-        if(strpos($txt, "images.txt") !== false){
+        if(PHG_ORDER_NEW && strpos($txt, "images.txt") !== false){
             rsort($array);
         }
         $new_array = [];
