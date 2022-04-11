@@ -18,6 +18,9 @@ if (!function_exists('imagecreatetruecolor')) {
 function get_list($txt){
     if(file_exists($txt)){
         $array = file($txt);
+        if(strpos($txt, "images.txt") !== false){
+            rsort($array);
+        }
         $new_array = [];
         foreach ($array as $line){
             array_push($new_array, cm\delete_br($line));

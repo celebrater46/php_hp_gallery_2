@@ -44,11 +44,6 @@
 1|g06003|__UNKNOWN__|マグナムエース||ビーンボール|A bean ball|0
 1|g06006|__UNKNOWN__|未来日記||後ろの人が別人|Yuno Gasai and Yukky Amano|0
 1|g06007|__UNKNOWN__|ヴォル・ドラゴン||ヴォル戦初勝利記念絵|The King of Volcano|0
-1|g07003|__UNKNOWN__|ソフィー＆アラク||TwitterフォロワーのBellさん家よりソフィーさん、アラクさんです|They are from Bell's World|0
-1|g07004|__UNKNOWN__|秋月神楽||TwitterフォロワーのBellさん家より秋月神楽さんです|She is Kagura Akitsuki from Bell's World|0
-1|g07005|__UNKNOWN__|まだお||オンラインゲームPSO2フレンドのまだおさん（自画像）です|Madao is very sexy woman, she is my friend in PSO2|0
-1|g07006|__UNKNOWN__|ZERO||オンラインゲームPSO2フレンドのZEROさん（自画像）です|Zero is the Knight of the Abyss. He is my friend in PSO2. 進路指導 means "Special Kind of Love"|0
-1|g07007|__UNKNOWN__|成瀬葵||Twitterフォロワーの梓さん家より成瀬葵さんです|Aoi Naruse is the Samurai master from Aznyan's World|0
 2|g09001|__UNKNOWN__|||||0
 2|g09002|__UNKNOWN__|||||0
 2|g09003|__UNKNOWN__|||||0
